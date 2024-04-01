@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import SignupImg from '../assets/SignupImg.png'
 
 const SignUp = () => {
   const [fullname, setFullname] = useState('');
@@ -32,86 +33,93 @@ const SignUp = () => {
   };
 
   return (
+   <div className='bg-red-400'>
     <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="fullname">Full Name</label>
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            value={fullname}
-            onChange={(e) => setFullname(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-              setEmailError(emailRegex.test(e.target.value) ? '' : 'Please enter a valid email address');
-            }}
-            required
-          />
-          {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={userpassword}
-            onChange={(e) => {
-              setUserpassword(e.target.value);
-              const hasUpperCase = /[A-Z]/.test(e.target.value);
-              const hasLowerCase = /[a-z]/.test(e.target.value);
-              const hasLength = e.target.value.length >= 8;
-              setPasswordError(
-                hasUpperCase && hasLowerCase && hasLength ? '' : 'Password must have at least one uppercase, one lowercase, and be at least 8 characters long'
-              );
-            }}
-            required
-          />
-          {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
-        </div>
-        <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => {
-              setConfirmPassword(e.target.value);
-              setConfirmPasswordError(e.target.value === userpassword ? '' : 'Passwords do not match');
-            }}
-            required
-          />
-          {confirmPasswordError && <p style={{ color: 'red' }}>{confirmPasswordError}</p>}
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="agreed"
-            name="agreed"
-            checked={agreed}
-            onChange={(e) => setAgreed(e.target.checked)}
-            required
-          />
-          <label htmlFor="agreed">I agree to the terms and conditions</label>
-        </div>
-        <button id="signupButton" type="submit">Sign Up</button>
-      </form>
-      {registrationMessage && <p>{registrationMessage}</p>}
+      <div>
+        <h2 className=''>Sign Up</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="fullname" className=''>Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+                setEmailError(emailRegex.test(e.target.value) ? '' : 'Please enter a valid email address');
+              }}
+              required
+            />
+            {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
+          </div>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={userpassword}
+              onChange={(e) => {
+                setUserpassword(e.target.value);
+                const hasUpperCase = /[A-Z]/.test(e.target.value);
+                const hasLowerCase = /[a-z]/.test(e.target.value);
+                const hasLength = e.target.value.length >= 8;
+                setPasswordError(
+                  hasUpperCase && hasLowerCase && hasLength ? '' : 'Password must have at least one uppercase, one lowercase, and be at least 8 characters long'
+                );
+              }}
+              required
+            />
+            {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
+          </div>
+          <div>
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+                setConfirmPasswordError(e.target.value === userpassword ? '' : 'Passwords do not match');
+              }}
+              required
+            />
+            {confirmPasswordError && <p style={{ color: 'red' }}>{confirmPasswordError}</p>}
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="agreed"
+              name="agreed"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+              required
+            />
+            <label htmlFor="agreed">I agree to the terms and conditions</label>
+          </div>
+          <button id="signupButton" type="submit">Sign Up</button>
+        </form>
+        {registrationMessage && <p>{registrationMessage}</p>}
+      </div>
     </div>
+    <div>
+      <img src={SignupImg} alt='Towel stacked together'/>
+    </div>
+   </div>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SignUp from './pages/SignUp'
 // import Test from './pages/Test'
-import './App.css'
+// import './App.css'
 
 function App() {
 
