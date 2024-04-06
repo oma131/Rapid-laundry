@@ -1,102 +1,44 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
-import axios from "axios";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Test = () => {
-    const [fullname, setFullname] = useState('')
-    const [email, setEmail] = useState("")
-    const [userpassword, setUserPassword] = useState("");
-    const [register, setRegister] = useState(false);
-
-    const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
-        e.preventDefault();
-        // make a popup alert showing the "submitted" text
-        console.log('form submitted')
-
-        axios.post('https://rapidclean-laundry.onrender.com/api/user/register', {
-            email: email,
-            userpassword: userpassword
-          })
-          .then(function (response) {
-            console.log(response.data);
-            alert("Submited");
-          })
-          .catch(function (error) {
-            console.log(error);
-            console.log(error.response)
-            alert(error.response.data.error.message)
-          });
-      }
-    
   return (
-    <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={(e)=>handleSubmit(e)}>
-        <div>
-          <label htmlFor="fullname">Full Name</label>
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            value={fullname}
-            onChange={(e) => setFullname(e.target.value)}
-            required
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ stroke: '#2ecc71', fill: 'none' }}
+        // animate={{ rotate: 360 }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+      >
+        <motion.g
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+        >
+          <circle cx="12" cy="12" r="10" />
+        </motion.g>
+        <motion.g
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+        >
+          <motion.path
+            d="M7 13l3 3 7-7"
+            strokeDasharray="24"
+            strokeDashoffset="24"
+            animate={{ strokeDashoffset: 0 }}
+            transition={{ duration: 2, repeat: 1, ease: 'linear' }} 
           />
-        </div>
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder='Enter email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            // style={{ border: formData.emailError ? '1px solid red' : '' }}
-            required
-          />
-          {/* {formData.emailError && <p style={{ color: 'red' }}>{formData.emailError}</p>} */}
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={userpassword}
-            onChange={(e) => setUserPassword(e.target.value)}
-            required
-          />
-          {/* {formData.passwordError && <p style={{ color: 'red' }}>{formData.passwordError}</p>} */}
-        </div>
-        {/* <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-          {formData.confirmPasswordError && <p style={{ color: 'red' }}>{formData.confirmPasswordError}</p>}
-        </div> */}
-        {/* <div>
-          <input
-            type="checkbox"
-            id="agreed"
-            name="agreed"
-            // checked={formData.agreed}
-            // onChange={handleChange}
-            required
-          />
-          <label htmlFor="agreed">I agree to the terms and conditions</label>
-        </div> */}
-        <button id="signupButton" onClick={(e) => handleSubmit(e)} type="submit">Sign Up</button>
-      </form>
+        </motion.g>
+      </motion.svg>
     </div>
-  )
-}
+  );
+};
 
-export default Test
+export default Test;
