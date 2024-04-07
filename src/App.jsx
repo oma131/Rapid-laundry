@@ -3,6 +3,8 @@ import React from 'react'
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import Navbar from './component/Navbar';
+
 import SignUp from './pages/SignUp'
 import ForgotPassword from './pages/ForgotPassword'
 
@@ -12,6 +14,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/navbar" element={<Navbar />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
         <Route path="/test" element={<Test />} />
