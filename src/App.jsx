@@ -7,6 +7,7 @@ import Navbar from './component/Navbar';
 
 import SignUp from './pages/SignUp'
 import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword';
 
 import Test from './pages/Test';
 
@@ -16,7 +17,8 @@ const App = () => {
       <Routes>
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ForgotPassword />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
