@@ -1,18 +1,23 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Test = () => {
+// Signup page 
+const SignUpSucessfulPage = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <motion.svg
+    <div class="">
+       
+     <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-white w-[17rem] rounded-[1rem] flex flex-col'>
+     { /* Animated svg */}
+        <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        width="100"
-        height="100"
+        width="80"
+        height="80"
         viewBox="0 0 24 24"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ stroke: '#2ecc71', fill: 'none' }}
+        style={{ stroke: '#28a745', fill: 'none' }}
         // animate={{ rotate: 360 }}
         transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
       >
@@ -37,9 +42,16 @@ const Test = () => {
           />
         </motion.g>
       </motion.svg>
-      
+        
+
+     {/* Congratulations text */}
+        <p className='text-center'>
+            Congratulations You have, <br />successfully created your <br />account
+        </p>
+        <button id="signupButton" className='w-[9rem] h-[2rem] text-white rounded-[0.3rem] bg-green-500 text-center' type="submit">Continue</button>
+         </div>
     </div>
   );
 };
 
-export default Test;
+export default SignUpSucessfulPage;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
 import { GoogleLogin } from '@react-oauth/google';
 // import SignupImg from '../assets/SignupImg.png'
 
@@ -13,7 +14,7 @@ const SignUp = () => {
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [registrationMessage, setRegistrationMessage] = useState('');
-
+  const [SignUpSuccessful, setSignUpsuccessful] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,6 +31,7 @@ const SignUp = () => {
     } catch (error) {
       console.error('Error submitting data:', error); // Handle error response from the backend
       setRegistrationMessage('Error signing up. Please try again later.');
+      setSignUpsuccessful(true); 
     }
   };
 
@@ -42,6 +44,9 @@ const SignUp = () => {
 
   return (
    <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+    {SignUpSuccessful ? (
+        <SignUpSucessfulPage /> // Render ErrorPage if signupError is true
+      ) : (
     <div className='flex items-center'>
       <div className='bg-white w-60  lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>
@@ -156,7 +161,7 @@ const SignUp = () => {
         <img src={SignupImg} alt='Towel stacked together' className='h-48 w-full hidden lg:block object-cover rounded-r-xl md:h-[600px] md:w-full ' />
       </div> */}
     </div>
-    
+     )}
    </div>
   );
 };

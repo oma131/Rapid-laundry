@@ -12,14 +12,10 @@ import Test from './pages/Test';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/navbar" element={<Navbar />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ForgotPassword />} />
-        <Route path="/test" element={<Test />} />
-      </Routes>
-    </Router>
+      <div className="relative bg-primaryColor text-lightText">
+        {/* Home Page */}
+     <Navbar />
+      </div>
   )
 }
 

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import Logo from '../assets/Logo.png'
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigationArray = [
+    { title: "Home", link: "/" },
+    { title: "SignUp", link: "/SignUp" },
+    { title: "LogIn", link: "/LogIn" },
+  ];
 
   return (
     <nav className="bg-white/30 backdrop-blur-md">
@@ -11,14 +17,20 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex ">
             <img src={Logo} alt='Rapid Clean logo'  className='w-48'/>
+            
           </div>
           
           {/* Links */}
           <div className="hidden md:flex justify-center flex-grow">
             <div className="flex space-x-4">
-              <a href="#" className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium active:text-[#0100BB]">Home</a>
-              <a href="#" className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">Services</a>
-              <a href="#" className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">Pricing</a>
+
+              {navigationArray.map(({ title, link }) => (
+            <Link key={link} to={link}>
+              <p className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">
+                {title}
+              </p>
+            </Link>
+          ))}
             </div>
           </div>
 
