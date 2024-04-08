@@ -16,6 +16,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Button clicked')
 
     try {
       const response = await axios.post('https://rapidclean-laundry.onrender.com/api/user/register', {
@@ -43,7 +44,7 @@ const SignUp = () => {
   return (
    <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
     <div className='flex items-center'>
-      <div className='bg-white w-60  lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
+      <div className='bg-white w-60 md:w-96 lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>
           <h2 className='text-[34px] lg:text-[40px] font-semibold'>Welcome to Rapid Clean</h2>
           <h3 className='text-[24px] font-[500] text-[#646468]'>Create an account</h3>
