@@ -42,7 +42,7 @@ const SignUp = () => {
   };
 
   return (
-   <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+   <div className='bg-midnight max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
     <div className='flex items-center'>
       <div className='bg-white w-60 md:w-96 lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>

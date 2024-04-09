@@ -9,6 +9,8 @@ export default {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      'dark': '#363636',
+      'neutral': '#666666',
       'white': '#ffffff',
       'purple': '#6261FF',
       'midnight': '#0100bb',

@@ -9,6 +9,7 @@ import Footer from './component/Footer';
 import SignUp from './pages/SignUp'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword';
+import HomePage from './pages/HomePage'
 
 import Test from './pages/Test';
 
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/signup" element={<SignUp />} />
