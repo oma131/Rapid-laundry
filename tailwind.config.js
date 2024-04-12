@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
-const { addDynamicIconSelectors } = require('@iconify/tailwind');
+// const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 export default {
   content: [
@@ -29,6 +29,6 @@ export default {
       customColor3: '#292f36',
     },
   },
-  plugins: [require("@tailwindcss/forms"), addDynamicIconSelectors(),],
+  plugins: [require("@tailwindcss/forms"),],
 }
 

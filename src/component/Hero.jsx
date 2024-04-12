@@ -31,14 +31,14 @@ const Hero = () => {
 
             <div className="mt-8 flex flex-wrap gap-4 text-center">
                 <a
-                href="#"
+                href="/login"
                 className="block w-full rounded-full bg-transparent px-12 py-3 text-sm font-medium text-midnight border border-midnight shadow hover:bg-white focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                 >
                     Log In
                 </a>
 
                 <a
-                href="#"
+                href="/signup"
                 className="block w-full rounded-full bg-midnight px-12 py-3 text-sm font-medium text-white shadow hover:text-midnight hover:bg-white focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
                 >
                 Sign Up
