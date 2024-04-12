@@ -3,7 +3,6 @@ import React from 'react'
 const Hero = () => {
   return (
     <div>
-{/* background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(54, 54, 54, 0.6) 13%, rgba(59, 59, 59, 0.6) 22.67%, rgba(102, 102, 102, 0.6) 100%); */}
 
         <section
         className="relative bg-[url(https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGF1bmRyeXxlbnwwfHwwfHx8MA%3D%3D)] bg-cover bg-center bg-no-repeat"
@@ -13,7 +12,7 @@ const Hero = () => {
         ></div>
 
         <div
-            className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+            className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 ml-8 lg:flex lg:h-screen lg:items-center lg:px-8"
         >
             <div className="max-w-xl text-center sm:text-left ">
                 <h1 className="text-2xl font-semibold sm:text-5xl text-midnight">
