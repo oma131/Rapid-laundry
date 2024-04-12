@@ -4,11 +4,24 @@ import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigationArray = [
-    { title: "Home", link: "/" },
-    { title: "SignUp", link: "/SignUp" },
-    { title: "LogIn", link: "/LogIn" },
-  ];
+
+//   const navigationArray = [
+//     { title: "Home", link: "/" },
+//     { title: "SignUp", link: "/SignUp" },
+//     { title: "LogIn", link: "/LogIn" },
+//   ];
+
+  const [activeMenuItem, setActiveMenuItem] = useState('');
+  const [isButtonClicked, setIsButtonClicked] = useState('')
+
+  const handleMenuItemClick = (menuItem) => {
+    setActiveMenuItem(menuItem);
+  };
+
+  const handleButtonClick = () => {
+    setIsButtonClicked(!isButtonClicked);
+  };
+
 
   return (
     <nav className="bg-white/30 backdrop-blur-md">
@@ -24,21 +37,27 @@ const Navbar = () => {
           <div className="hidden md:flex justify-center flex-grow">
             <div className="flex space-x-4">
 
-              {navigationArray.map(({ title, link }) => (
-            <Link key={link} to={link}>
-              <p className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">
-                {title}
-              </p>
-            </Link>
-          ))}
+
+//               {navigationArray.map(({ title, link }) => (
+//             <Link key={link} to={link}>
+//               <p className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">
+//                 {title}
+//               </p>
+//             </Link>
+//           ))}
+
+              <a href="#" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</a>
+              <a href="#" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</a>
+              <a href="#" onClick={() => handleMenuItemClick('link3')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link3' ? 'underline underline-offset-8 text-midnight' : ''} `}>Pricing</a>
+
             </div>
           </div>
 
           {/* Button */}
           <div className="flex items-center">
-            <button className="text-white bg-[#0100BB] hover:text-white px-14 py-2 rounded-md text-sm text-lg font-medium">Book Now</button>
+            <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>Book Now</button>
             <div className="-mr-2 flex md:hidden">
-              <button onClick={() => setIsOpen(!isOpen)} type="button" className=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+              <button onClick={() => setIsOpen(!isOpen)} type="button" className=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-[#0100BB] focus:outline-none   ">
                 <span className="sr-only">Open main menu</span>
                 {isOpen ? (
                   <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,9 +78,10 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-red-400">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Link 1</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Link 2</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Link 3</a>
+            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+            <button className="text-white bg-[#0100BB] hover:text-white px-14 py-2 rounded-md text-sm text-lg font-medium">Book Now</button>
           </div>
         </div>
       )}
