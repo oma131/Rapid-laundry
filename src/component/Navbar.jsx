@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import Logo from '../assets/Logo.png'
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+//   const navigationArray = [
+//     { title: "Home", link: "/" },
+//     { title: "SignUp", link: "/SignUp" },
+//     { title: "LogIn", link: "/LogIn" },
+//   ];
+
   const [activeMenuItem, setActiveMenuItem] = useState('');
   const [isButtonClicked, setIsButtonClicked] = useState('')
 
@@ -14,6 +22,7 @@ const Navbar = () => {
     setIsButtonClicked(!isButtonClicked);
   };
 
+
   return (
     <nav className="bg-white/30 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,14 +30,26 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex ">
             <img src={Logo} alt='Rapid Clean logo'  className='w-48'/>
+            
           </div>
           
           {/* Links */}
           <div className="hidden md:flex justify-center flex-grow">
             <div className="flex space-x-4">
+
+
+//               {navigationArray.map(({ title, link }) => (
+//             <Link key={link} to={link}>
+//               <p className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">
+//                 {title}
+//               </p>
+//             </Link>
+//           ))}
+
               <a href="#" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</a>
               <a href="#" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</a>
               <a href="#" onClick={() => handleMenuItemClick('link3')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link3' ? 'underline underline-offset-8 text-midnight' : ''} `}>Pricing</a>
+
             </div>
           </div>
 
