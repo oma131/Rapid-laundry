@@ -1,5 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
+
+import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
 import { GoogleLogin } from '@react-oauth/google';
 // import SignupImg from '../assets/SignupImg.png'
 
@@ -13,7 +16,7 @@ const SignUp = () => {
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [registrationMessage, setRegistrationMessage] = useState('');
-
+  const [SignUpSuccessful, setSignUpsuccessful] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Button clicked')
@@ -60,7 +63,10 @@ const SignUp = () => {
   };
 
   return (
-   <div className='bg-midnight max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+   <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+    {SignUpSuccessful ? (
+        <SignUpSucessfulPage /> // Render ErrorPage if signupError is true
+      ) : (
     <div className='flex items-center'>
       <div className='bg-white w-60 md:w-96 lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>
@@ -171,11 +177,8 @@ const SignUp = () => {
         </form>
         {registrationMessage && <p>{registrationMessage}</p>}
       </div>
-      {/* <div className=''>
-        <img src={SignupImg} alt='Towel stacked together' className='h-48 w-full hidden lg:block object-cover rounded-r-xl md:h-[600px] md:w-full ' />
-      </div> */}
     </div>
-    
+     )}
    </div>
   );
 };
