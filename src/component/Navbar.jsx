@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white/30 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-12 lg:py-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex ">
@@ -38,13 +38,13 @@ const Navbar = () => {
             <div className="flex space-x-4">
 
 
-//               {navigationArray.map(({ title, link }) => (
-//             <Link key={link} to={link}>
-//               <p className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">
-//                 {title}
-//               </p>
-//             </Link>
-//           ))}
+                {/* {navigationArray.map(({ title, link }) => (
+                  <Link key={link} to={link}>
+                    <p className="text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg hover:underline-offset-8 font-medium">
+                      {title}
+                    </p>
+                  </Link>
+                ))} */}
 
               <a href="#" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</a>
               <a href="#" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</a>
@@ -55,7 +55,11 @@ const Navbar = () => {
 
           {/* Button */}
           <div className="flex items-center">
-            <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>Book Now</button>
+            <a href='/signup' >
+              <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>
+                Book Now
+              </button>
+            </a>
             <div className="-mr-2 flex md:hidden">
               <button onClick={() => setIsOpen(!isOpen)} type="button" className=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-[#0100BB] focus:outline-none   ">
                 <span className="sr-only">Open main menu</span>

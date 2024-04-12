@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+
 import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
 import { GoogleLogin } from '@react-oauth/google';
 // import SignupImg from '../assets/SignupImg.png'
@@ -19,21 +21,38 @@ const SignUp = () => {
     e.preventDefault();
     console.log('Button clicked')
 
+    // try {
+    //   const response = await axios.post('http://localhost:5001/api/user/register', {
+    //     fullname,
+    //     email,
+    //     userpassword,
+    //     confirmPassword,
+    //     agreed
+    //   });
+    //   console.log("User signup successful", response.data); // Handle successful response from the backend
+    //   setRegistrationMessage('Signup successful! You can now login.');
+    // } catch (error) {
+    //   console.error('Error submitting data:', error); // Handle error response from the backend
+    //   setRegistrationMessage('Error signing up. Please try again later.');
+    // }
+
     try {
-      const response = await axios.post('https://rapidclean-laundry.onrender.com/api/user/register', {
-        fullname,
-        email,
-        userpassword,
-        confirmPassword,
-        agreed
+      const response = await fetch('http://localhost:5001/api/user/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, userpassword, confirmPassword, agreed }),
       });
-      console.log("User signup successful", response.data); // Handle successful response from the backend
-      setRegistrationMessage('Signup successful! You can now login.');
+
+        const responseData = await response.json();
+        console.log(responseData);
+
     } catch (error) {
       console.error('Error submitting data:', error); // Handle error response from the backend
-      setRegistrationMessage('Error signing up. Please try again later.');
-      setSignUpsuccessful(true); 
     }
+
+
   };
 
   const responseMessage = (response) => {
@@ -158,9 +177,6 @@ const SignUp = () => {
         </form>
         {registrationMessage && <p>{registrationMessage}</p>}
       </div>
-      {/* <div className=''>
-        <img src={SignupImg} alt='Towel stacked together' className='h-48 w-full hidden lg:block object-cover rounded-r-xl md:h-[600px] md:w-full ' />
-      </div> */}
     </div>
      )}
    </div>

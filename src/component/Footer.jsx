@@ -7,10 +7,9 @@ import sms from '../assets/sms.svg'
 import location from '../assets/location.svg'
 import NewsletterForm from './Newsletter'
 
-
 const Footer = () => {
   return (
-    <footer className="bg-[#EBEBEB] border border-midnight">
+    <footer className="bg-[#EBEBEB] border-t border-t-midnight">
         <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8">
             <div className="lg:flex lg:items-center lg:justify-between">
                 <div className="flex justify-center text-teal-600 sm:justify-start">
@@ -72,10 +71,10 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <div className="text-center sm:text-left w-80">
+                <div className="text-center sm:text-left w-full lg:w-80">
                     <p className="text-base font-semibold text-midnight">Contact</p>
 
-                    <ul className="mt-8 space-y-4 text-xs text-purple">
+                    <ul className="mt-8 space-y-4 text-xs text-purple ">
                         <li>
                             <a className=" transition flex items-center" href="#">
                                 <img src={call} alt='call vector' className='mr-2 w-4 '/>
@@ -93,7 +92,7 @@ const Footer = () => {
                         <li>
                             <a className="transition flex items-center" href="#"> 
                                 <img src={location} alt='location vector' className='mr-2 w-6'/>
-                                Plot 255 Hassan T. Sanni Street CBN Choos Estate Abuja.
+                                <p >Plot 255 Hassan T. Sanni Street CBN Choos Estate Abuja.</p>
                             </a>
                         </li>
 
@@ -108,9 +107,9 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>  
+
                 
                 <NewsletterForm />
-                
             </div>
 
             <div className="mt-16 border-t border-purple pt-6 sm:flex sm:items-center sm:justify-between">
