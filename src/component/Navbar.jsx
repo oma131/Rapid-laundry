@@ -55,8 +55,8 @@ const Navbar = () => {
 
           {/* Button */}
           <div className="flex items-center">
-            <a href='/signup' >
-              <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>
+            <a href='/dashboard' >
+              <button className='hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium'>
                 Book Now
               </button>
             </a>
