@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 body {
     margin: 0;
@@ -9,3 +13,12 @@ body {
     font-family: "Nunito", sans-serif;
     /* background-color: navy; */
 }
+/* index.css or App.css */
+
+
+.Nunito-fonts {
+  font-family: "Nunito", sans-serif;
+}
+.hero-image {
+    @apply bg-[url('./assets/hero-pricing-image.png')] bg-contain bg-no-repeat 
+  }

@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-
-// import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
-import VerificationPopup from '../component/VerificationPopup';
+import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
 import { GoogleLogin } from '@react-oauth/google';
 // import SignupImg from '../assets/SignupImg.png'
 
@@ -17,31 +14,29 @@ const SignUp = () => {
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [registrationMessage, setRegistrationMessage] = useState('');
-  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-  // const [SignUpSuccessful, setSignUpsuccessful] = useState(false);
-
+  const [SignUpSuccessful, setSignUpsuccessful] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // State variable for loading state
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Button clicked')
+    setIsLoading(true); 
 
     try {
       const response = await axios.post('https://rapidclean-laundry.onrender.com/api/user/register', {
         fullname,
         email,
         userpassword,
-        // confirmPassword,
-        // agreed
+        confirmPassword,
+        agreed
       });
       console.log("User signup successful", response.data); // Handle successful response from the backend
-      setShowSuccessPopup(true);
+      setRegistrationMessage('Signup successful! You can now login.');
+      setIsLoading(false); 
     } catch (error) {
       console.error('Error submitting data:', error); // Handle error response from the backend
       setRegistrationMessage('Error signing up. Please try again later.');
+      setSignUpsuccessful(true); 
+      setIsLoading(false); 
     }
-
-    
-
-
   };
 
   const responseMessage = (response) => {
@@ -52,9 +47,12 @@ const SignUp = () => {
   };
 
   return (
-   <div className='bg-midnight max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+   <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+    {SignUpSuccessful ? (
+        <SignUpSucessfulPage /> // Render ErrorPage if signupError is true
+      ) : (
     <div className='flex items-center'>
-      <div className='bg-white w-60 md:w-96 lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
+      <div className='bg-white w-60  lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>
           <h2 className='text-[34px] lg:text-[40px] font-semibold'>Welcome to Rapid Clean</h2>
           <h3 className='text-[24px] font-[500] text-[#646468]'>Create an account</h3>
@@ -146,11 +144,18 @@ const SignUp = () => {
             </div>
           </div>
           <div className='mt-[16px] h-[132px] flex flex-col items-center  justify-between'>
-            <button id="signupButton" className='w-48 lg:w-full h-[36px] text-white rounded-full bg-[#0100BB] text-center' type="submit">Sign Up</button>
+          <button id="signupButton" className='w-48 lg:w-full h-[36px] active:bg-rose-500 text-white rounded-full bg-[#0100BB] text-center' type="submit">
+                  {isLoading ? (
+                    <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
+                    </p>
+                    ):( 'Sign Up'
+                    )}
+                </button>
+               
             <p>
               Already have an account? 
-              <span className='text-[#0100BB]'>
-                <a href='#'> Log in</a>
+              <span className='text-[#0100BB] active:text-rose-500'>
+                <a href='/Login'> Log in</a>
               </span>  
             </p>
             <div className=' flex items-center justify-between'>
@@ -161,10 +166,13 @@ const SignUp = () => {
             <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
           </div>
         </form>
-  
+        {registrationMessage && <p>{registrationMessage}</p>}
       </div>
+      {/* <div className=''>
+        <img src={SignupImg} alt='Towel stacked together' className='h-48 w-full hidden lg:block object-cover rounded-r-xl md:h-[600px] md:w-full ' />
+      </div> */}
     </div>
-    {showSuccessPopup && <VerificationPopup />}
+     )}
    </div>
   );
 };

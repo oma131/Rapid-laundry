@@ -1,13 +1,15 @@
-
-import React from 'react';
+// ErrorPage.js
+import React, { useState }from 'react';
 import { motion } from 'framer-motion';
-import { Link} from 'react-router-dom';
+import { Link } from "react-router-dom"
 
-// Signup page 
-const SignUpSucessfulPage = () => {
+const PasswordPageResetSucess= () => {
+  const [isLoading, setIsLoading] = useState(false); // State variable for loading state
+  
+  
+
   return (
-    <div class="">
-       
+    <div className="">
      <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-white w-[17rem] rounded-[1rem] flex flex-col'>
      { /* Animated svg */}
         <motion.svg
@@ -45,15 +47,17 @@ const SignUpSucessfulPage = () => {
       </motion.svg>
         
 
-     {/* Congratulations text */}
         <p className='text-center'>
-            Congratulations You have, <br />successfully created your <br />account
+            Congratulations you have, <br />successfully reset your <br />password!
         </p>
+        
       
         <Link to="/" id="signupButton" className='w-[9rem] py-[0.5rem] text-white rounded-[0.3rem] bg-darkgreen text-center' type="submit">Continue</Link>
+                
+               
          </div>
     </div>
   );
 };
 
-export default SignUpSucessfulPage;
+export default PasswordPageResetSucess;
