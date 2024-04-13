@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 // Signup page 
 const SignUpSucessfulPage = () => {
   return (
-    <div class="">
+    <div className="">
        
      <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-white w-[17rem] rounded-[1rem] flex flex-col'>
      { /* Animated svg */}

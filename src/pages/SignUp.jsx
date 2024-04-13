@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
-import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
+// import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
+import VerificationPopup from '../component/VerificationPopup';
 import { GoogleLogin } from '@react-oauth/google';
 // import SignupImg from '../assets/SignupImg.png'
 
@@ -16,41 +17,29 @@ const SignUp = () => {
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [registrationMessage, setRegistrationMessage] = useState('');
-  const [SignUpSuccessful, setSignUpsuccessful] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  // const [SignUpSuccessful, setSignUpsuccessful] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Button clicked')
 
-    // try {
-    //   const response = await axios.post('http://localhost:5001/api/user/register', {
-    //     fullname,
-    //     email,
-    //     userpassword,
-    //     confirmPassword,
-    //     agreed
-    //   });
-    //   console.log("User signup successful", response.data); // Handle successful response from the backend
-    //   setRegistrationMessage('Signup successful! You can now login.');
-    // } catch (error) {
-    //   console.error('Error submitting data:', error); // Handle error response from the backend
-    //   setRegistrationMessage('Error signing up. Please try again later.');
-    // }
-
     try {
-      const response = await fetch('http://localhost:5001/api/user/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, userpassword, confirmPassword, agreed }),
+      const response = await axios.post('https://rapidclean-laundry.onrender.com/api/user/register', {
+        fullname,
+        email,
+        userpassword,
+        // confirmPassword,
+        // agreed
       });
-
-        const responseData = await response.json();
-        console.log(responseData);
-
+      console.log("User signup successful", response.data); // Handle successful response from the backend
+      setShowSuccessPopup(true);
     } catch (error) {
       console.error('Error submitting data:', error); // Handle error response from the backend
+      setRegistrationMessage('Error signing up. Please try again later.');
     }
+
+    
 
 
   };
@@ -63,10 +52,7 @@ const SignUp = () => {
   };
 
   return (
-   <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
-    {SignUpSuccessful ? (
-        <SignUpSucessfulPage /> // Render ErrorPage if signupError is true
-      ) : (
+   <div className='bg-midnight max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
     <div className='flex items-center'>
       <div className='bg-white w-60 md:w-96 lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>
@@ -175,10 +161,10 @@ const SignUp = () => {
             <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
           </div>
         </form>
-        {registrationMessage && <p>{registrationMessage}</p>}
+  
       </div>
     </div>
-     )}
+    {showSuccessPopup && <VerificationPopup />}
    </div>
   );
 };

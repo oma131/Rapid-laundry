@@ -15,6 +15,7 @@ const LogIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('button clicked')
 
     try {
         const response = await axios.post('https://rapidclean-laundry.onrender.com/api/user/login', {
@@ -39,7 +40,7 @@ const LogIn = () => {
   };
 
   return (
-   <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+   <div className='bg-midnight max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
      {loginError ? (
         <ErrorPage /> // Render ErrorPage if loginError is true
       ) : (

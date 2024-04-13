@@ -3,10 +3,10 @@ import React from 'react';
 
 const ErrorPage = () => {
   return (
-    <div class="">
+    <div className="">
      <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-white w-[17rem] rounded-[1rem] flex flex-col'>
-        <div class="w-[5rem] flex justify-center items-center h-[5rem] border-[0.2rem] border-red-700 rounded-full">
-     <span class="icon-[quill--warning] text-customColor2 w-[2.5rem] h-[2.5rem] "></span>
+        <div className="w-[5rem] flex justify-center items-center h-[5rem] border-[0.2rem] border-red-700 rounded-full">
+     <span className="icon-[quill--warning] text-customColor2 w-[2.5rem] h-[2.5rem] "></span>
         
         </div>
         <p className='text-center'>
