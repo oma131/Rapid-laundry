@@ -44,15 +44,30 @@ const SignUp = () => {
 
   };
 
-  const responseMessage = (response) => {
-    console.log(response);
+  const handleGoogleLoginSuccess = async (response) => {
+    try {
+      const token = response.accessToken; // Obtain Google OAuth token
+      const backendResponse = await axios.post('https://rapidclean-laundry.onrender.com/api/user/register', { token }); // Send token to backend
+      console.log(backendResponse.data); // Handle backend response
+      setShowSuccessPopup(true);
+    } catch (error) {
+      console.error('Error logging in with Google:', error);
+      setRegistrationMessage('Error signing up with Google. Please try again later.');
+    }
   };
-  const errorMessage = (error) => {
-      console.log(error);
+
+  const handleGoogleLoginError = (error) => {
+    console.error('Google login error:', error);
+    setRegistrationMessage('Error signing up with Google. Please try again later.');
+  };
+
+  const handleVerificationSuccess = () => {
+    // Redirect to login page after successful verification
+    window.location.href = '/login';
   };
 
   return (
-   <div className='bg-midnight max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
+   <div className='bg-midnight max-w-screen-4xl w-full mx-auto p-4 flex justify-center items-center min-h-screen'>
     <div className='flex items-center'>
       <div className='bg-white w-60 md:w-96 lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>
@@ -150,7 +165,7 @@ const SignUp = () => {
             <p>
               Already have an account? 
               <span className='text-[#0100BB]'>
-                <a href='#'> Log in</a>
+                <a href='/login'> Log in</a>
               </span>  
             </p>
             <div className=' flex items-center justify-between'>
@@ -158,13 +173,13 @@ const SignUp = () => {
               <p className='text-[#94A3B8] text-[14px]'>Or</p>
               <hr  className='border border-[#94A3B8] w-16 lg:w-52'/>
             </div>
-            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+            <GoogleLogin onSuccess={handleGoogleLoginSuccess} onError={handleGoogleLoginError} />
           </div>
         </form>
   
       </div>
     </div>
-    {showSuccessPopup && <VerificationPopup />}
+    {showSuccessPopup && <VerificationPopup  onVerificationSuccess={handleVerificationSuccess}/>}
    </div>
   );
 };

@@ -11,6 +11,7 @@ export default {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      'black': '#000000',
       'dark': '#363636',
       'neutral': '#666666',
       'white': '#ffffff',
@@ -24,6 +25,7 @@ export default {
       'green': '#86EFAC',
       'card': '#9333EA',
       'darkgreen': '#28A745',
+      'darkgrey': '#646468',
       customColor: '#28745', // Add your custom color here
       customColor2: '#990404',
       customColor3: '#292f36',

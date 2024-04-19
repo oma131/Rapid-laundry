@@ -25,7 +25,7 @@ const LogIn = () => {
         });
         console.log("User login successful", response.data); // Handle successful response from the backend
         // Navigate to main page if login is successful
-        history.push('/main');
+        history.push('/dashboard');
       } catch (error) {
         console.error('Error logging in:', error); // Handle error response from the backend
         setLoginError(true); // Set loginError to true

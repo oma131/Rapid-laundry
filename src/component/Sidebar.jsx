@@ -56,7 +56,7 @@ const Sidebar = ({children}) => {
     ]
     return (
         <div className="flex flex-col md:flex-row">
-        <nav className="w-full md:w-48 md:h-screen md:bg-light md:text-black fixed md:fixed overflow-y-auto md:overflow-y-visible bottom-0 md:top-0 md:left-0">
+        <nav className="w-full md:w-48 md:h-screen md:bg-black/5 md:text-black fixed md:fixed overflow-y-auto md:overflow-y-visible shadow-2xl bottom-0 md:top-0 md:left-0">
           <div className="hidden p-4 md:flex items-center justify-center md:justify-start">
             <img src={Logo} alt='Rapid clean logo' />
           </div>
@@ -65,8 +65,8 @@ const Sidebar = ({children}) => {
                 <NavLink
                     key={index}
                     to={item.path}
-                    className={`p-4 flex items-center gap-4 text-black hover:text-midnight ${
-                        activeLink === index ? 'bg-grey text-midnight' : ''
+                    className={`p-4 flex items-center gap-4 text-darkgrey hover:text-midnight hover:font-bold ${
+                        activeLink === index ? 'bg-grey text-midnight font-bold' : ''
                     }`}
                     onClick={() => handleNavLinkClick(index)}
                 >
@@ -74,11 +74,11 @@ const Sidebar = ({children}) => {
                     <span className="text-sm">{item.name}</span>
                 </NavLink>
                 ))}
-                <div className="md:block hidden absolute bottom-0 left-0 w-full md:w-auto mb-24">
+                <div className="md:block hidden absolute bottom-0 left-0 w-full  mb-24">
                     <NavLink
                         to="/logout"
-                        className={`p-4 flex items-center gap-4 text-black hover:text-midnight ${
-                            location.pathname === '/logout' ? 'bg-grey text-midnight' : ''
+                        className={`p-4 flex items-center gap-4 text-black hover:text-midnight hover:font-bold ${
+                            location.pathname === '/logout' ? 'bg-grey text-midnight font-bold' : ''
                           }`}
                         onClick={() => setActiveLink(null)}
                     >
@@ -94,8 +94,8 @@ const Sidebar = ({children}) => {
             <NavLink
               key={index}
               to={item.path}
-              className={`p-4 flex items-center gap-4 text-black ${
-                    activeLink === index ? 'bg-grey text-midnight' : ''
+              className={`p-4 flex items-center gap-4 text-darkgrey ${
+                    activeLink === index ? 'bg-grey text-midnight font-bold' : ''
                 }`}
                onClick={() => handleNavLinkClick(index)}
             >
@@ -105,7 +105,7 @@ const Sidebar = ({children}) => {
           <NavLink
             to="/logout"
             className={`p-4 flex items-center gap-4 text-black ${
-                location.pathname === '/logout' ? 'bg-grey text-midnight' : ''
+                location.pathname === '/logout' ? 'bg-grey text-midnight font-bold' : ''
               }`}
               onClick={() => setActiveLink(null)}
           >

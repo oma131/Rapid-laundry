@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from '../component/Navbar'
 import Hero from '../component/Hero'
 import Footer from '../component/Footer'
+import Blog from '../component/Blog'
+import Testimonial from '../component/Testimonial'
 
 import About from '../assets/About.png'
 import basket from '../assets/basket.png'
@@ -244,9 +246,8 @@ const HomePage = () => {
           
         </section>
 
-        <section>
-            
-        </section>
+        <Blog />
+        <Testimonial />
         <Footer />
       </div>
       

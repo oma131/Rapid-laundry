@@ -21,6 +21,9 @@ import BookNow from './pages/userDashboard/BookNow'
 import MyOrders from './pages/userDashboard/MyOrders'
 import Notification from './pages/userDashboard/Notification'
 import Settings from './pages/userDashboard/Settings'
+import MyProfile from './pages/userDashboard/MyProfile'
+import UpdateProfile from './pages/userDashboard/UpdateProfile'
+
 
 // import Sidebar from './component/Sidebar'
 
@@ -42,6 +45,8 @@ const App = () => {
 
         <Route path="/dashboard/*" element={<DashboardWithSidebar />} />
         <Route path="/bookNow" element={<SidebarRouteWrapper><BookNow /></SidebarRouteWrapper>} />
+        <Route path="/update-profile" element={<SidebarRouteWrapper><UpdateProfile /></SidebarRouteWrapper>} />
+        <Route path="/my-profile" element={<SidebarRouteWrapper><MyProfile /></SidebarRouteWrapper>} />
         <Route path="/home" element={<SidebarRouteWrapper><Home /></SidebarRouteWrapper>} />
         <Route path="/orders" element={<SidebarRouteWrapper><MyOrders /></SidebarRouteWrapper>} />
         <Route path="/notifications" element={<SidebarRouteWrapper><Notification /></SidebarRouteWrapper>} />

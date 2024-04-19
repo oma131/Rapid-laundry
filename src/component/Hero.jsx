@@ -1,4 +1,5 @@
 import React from 'react'
+// import BlogPic1 from '../assets/BlogPic1.png'
 
 const Hero = () => {
   return (
@@ -12,7 +13,7 @@ const Hero = () => {
         ></div>
 
         <div
-            className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 ml-8 lg:flex lg:h-screen lg:items-center lg:px-8"
+            className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 ml-0 md:ml-8 lg:ml-8 lg:flex lg:h-screen lg:items-center lg:px-8"
         >
             <div className="max-w-xl text-center sm:text-left ">
                 <h1 className="text-2xl font-semibold sm:text-5xl text-midnight">
