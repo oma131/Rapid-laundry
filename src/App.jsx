@@ -13,8 +13,6 @@ import ResetPassword from './pages/ResetPassword';
 import HomePage from './pages/HomePage'
 import LogIn from './pages/LogIn'
 
-
-import Home from './pages/userDashboard/Home'
 import Logout from './pages/userDashboard/Logout'
 import Dashboard from './pages/userDashboard/Dashboard'
 import BookNow from './pages/userDashboard/BookNow'
@@ -23,9 +21,8 @@ import Notification from './pages/userDashboard/Notification'
 import Settings from './pages/userDashboard/Settings'
 import MyProfile from './pages/userDashboard/MyProfile'
 import UpdateProfile from './pages/userDashboard/UpdateProfile'
+import Home from './pages/userDashboard/Home'
 
-
-// import Sidebar from './component/Sidebar'
 import PricingPage from './pages/PricingPage';
 
 
