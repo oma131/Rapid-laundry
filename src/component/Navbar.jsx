@@ -46,17 +46,17 @@ const Navbar = () => {
                   </Link>
                 ))} */}
 
-              <a href="#" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</a>
+              <a href="/" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</a>
               <a href="#" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</a>
-              <a href="#" onClick={() => handleMenuItemClick('link3')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link3' ? 'underline underline-offset-8 text-midnight' : ''} `}>Pricing</a>
+              <a href="/pricing-page" onClick={() => handleMenuItemClick('link3')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link3' ? 'underline underline-offset-8 text-midnight' : ''} `}>Pricing</a>
 
             </div>
           </div>
 
           {/* Button */}
           <div className="flex items-center">
-            <a href='/dashboard' >
-              <button className='hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium'>
+            <a href='/signup' >
+              <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>
                 Book Now
               </button>
             </a>

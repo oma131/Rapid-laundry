@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
-// const { addDynamicIconSelectors } = require('@iconify/tailwind');
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 export default {
   content: [
@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     colors: {
+      customColor: '#28A745', // Add your custom color here
+      customColor2: '#990404',
+      customColor3: '#292f36',
       transparent: 'transparent',
       current: 'currentColor',
       'black': '#000000',
@@ -29,8 +32,10 @@ export default {
       customColor: '#28745', // Add your custom color here
       customColor2: '#990404',
       customColor3: '#292f36',
+   
     },
   },
-  plugins: [require("@tailwindcss/forms"),],
+  plugins: [require("@tailwindcss/forms"),  addDynamicIconSelectors(),],
 }
 
+// addDynamicIconSelectors(), this plugin is for using iconify icons in tailwind

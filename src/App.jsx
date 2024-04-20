@@ -26,6 +26,7 @@ import UpdateProfile from './pages/userDashboard/UpdateProfile'
 
 
 // import Sidebar from './component/Sidebar'
+import PricingPage from './pages/PricingPage';
 
 
 import Test from './pages/Test';
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/notifications" element={<SidebarRouteWrapper><Notification /></SidebarRouteWrapper>} />
         <Route path="/settings" element={<SidebarRouteWrapper><Settings /></SidebarRouteWrapper>} />
         <Route path="/logout" element={<SidebarRouteWrapper><Logout /></SidebarRouteWrapper>} />
+        <Route path="/pricing-page" element={<PricingPage />} />
       </Routes>
     </Router>
   )
@@ -72,6 +74,7 @@ function DashboardWithSidebar() {
     </Sidebar>
   );
 }
+
 
 
 export default App
