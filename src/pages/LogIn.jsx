@@ -27,9 +27,7 @@ const LogIn = () => {
         });
         console.log("User login successful", response.data); // Handle successful response from the backend
         // Navigate to main page if login is successful
-       
-        setIsLoading(false); 
-        setRedirect(true);
+        history.push('/dashboard');
       } catch (error) {
         console.error('Error logging in:', error); // Handle error response from the backend
         setLoginError(true); // Set loginError to true
@@ -129,7 +127,7 @@ const LogIn = () => {
           <div className='mt-[4rem] h-[132px] flex flex-col items-center  justify-between'>
           <button id="signupButton" className='w-48 lg:w-full h-[36px] active:bg-rose-500 text-white rounded-full bg-[#0100BB] text-center' type="submit">
                   {isLoading ? (
-                    <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
+                    <p>  Processing... <span className="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
                     </p>
                     ):( 'Login'
                     )}
