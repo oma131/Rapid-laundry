@@ -55,11 +55,11 @@ const Navbar = () => {
 
           {/* Button */}
           <div className="flex items-center">
-            <a href='/signup' >
+            <NavLink href='/dashboard' >
               <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>
                 Book Now
               </button>
-            </a>
+            </NavLink>
             <div className="-mr-2 flex md:hidden">
               <button onClick={() => setIsOpen(!isOpen)} type="button" className=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-[#0100BB] focus:outline-none   ">
                 <span className="sr-only">Open main menu</span>
