@@ -146,7 +146,7 @@ const SignUp = () => {
           <div className='mt-[16px] h-[132px] flex flex-col items-center  justify-between'>
           <button id="signupButton" className='w-48 lg:w-full h-[36px] active:bg-rose-500 text-white rounded-full bg-[#0100BB] text-center' type="submit">
                   {isLoading ? (
-                    <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
+                    <p>  Processing... <span className="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
                     </p>
                     ):( 'Sign Up'
                     )}

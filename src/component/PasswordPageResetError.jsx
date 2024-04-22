@@ -11,7 +11,7 @@ const PasswordPageResetError= () => {
 
   return (
     <div className="">
-     <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-white w-[17rem] rounded-[1rem] flex flex-col'>
+     <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-awhite w-[17rem] rounded-[1rem] flex flex-col'>
         <div className="w-[5rem] flex justify-center items-center h-[5rem] border-[0.2rem] border-red-700 rounded-full">
      <span className="icon-[quill--warning] text-customColor2 w-[2.5rem] h-[2.5rem] "></span>
         
@@ -20,9 +20,9 @@ const PasswordPageResetError= () => {
             The code you entered, <br />is incorrect please try again
         </p>
         
-        <button id="signupButton" onClick={handleRefresh}  className='w-[9rem] h-[36px] active:bg-rose-700 text-white rounded-[0.5rem] bg-customColor2 text-center' type="submit">
+        <button id="signupButton" onClick={handleRefresh}  className='w-[9rem] h-[36px] active:bg-rose-700 text-awhite rounded-[0.5rem] bg-customColor2 text-center' type="submit">
                   {isLoading ? (
-                    <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
+                    <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-awhite "></span>{/* Add your SVG animation here */}
                     </p>
                     ):( 'Try again'
                     )}

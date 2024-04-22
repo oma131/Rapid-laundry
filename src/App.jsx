@@ -12,8 +12,10 @@ import ResetPassword from './pages/ResetPassword';
 import HomePage from './pages/HomePage'
 import LogIn from './pages/LogIn'
 import PricingPage from './pages/PricingPage';
-
-
+import Calendar from './component/Calendar';
+import DateTimePicker from './component/DateTimePicker';
+import BookNow from './component/BookNow';
+import ServicePage from './pages/ServicePage';
 import Test from './pages/Test';
 
 const App = () => {
@@ -29,6 +31,10 @@ const App = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/test" element={<Test />} />
         <Route path="/pricing-page" element={<PricingPage />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/date-time" element={<DateTimePicker />} />
+        <Route path="/booknow" element={<BookNow />} />
+        <Route path="/services" element={<ServicePage />} />
       </Routes>
     </Router>
   )

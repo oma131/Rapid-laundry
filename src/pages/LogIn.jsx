@@ -54,15 +54,15 @@ const LogIn = () => {
         <ErrorLoginPage />
       ) : (
     <div className='flex items-center'>
-      <div className='bg-white w-60  lg:w-[520px] rounded-[2rem] flex flex-col justify-center items-center py-[4rem] px-[3rem]'>
-        <div className='text-left'>
-          <h2 className='text-[34px] lg:text-[40px] text-center font-semibold'>Welcome Back</h2>
-          <h3 className='text-[24px] font-[500] text-center text-[#646468]'>Please enter your details to login</h3>
+      <div className='bg-awhite w-[340px]  pl-4 lg:pl-0 lg:w-[520px] lg:rounded-[2rem] rounded-md flex flex-col justify-center lg:items-center py-[4rem] lg:px-[3rem]'>
+        <div className='lg:text-left'>
+          <h2 className='text-[27px] lg:text-[40px] lg:text-center font-semibold'>Welcome Back</h2>
+          <h3 className='text-[19px] font-[500] lg:text-center text-[#646468]'>Please enter your details to login</h3>
         </div>
-        <form onSubmit={handleSubmit} className='w-[465] mt-[16px]'>
-          <div className='h-[170px] mt-[0.5rem] flex flex-col justify-between'>
+        <form onSubmit={handleSubmit} className='lg:w-[465] w-[320px] mt-[16px]'>
+          <div className='h-[170px] lg:mt-[0.5rem] flex flex-col justify-between'>
            
-            <div className='flex mt-[1rem] flex-col '>
+            <div className='flex lg:mt-[1rem] flex-col '>
               <label htmlFor="email" className='text-[14px]'>Your email address</label>
               <input
                 type="email"
@@ -81,7 +81,7 @@ const LogIn = () => {
               />
               {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
             </div>
-            <div className='flex mt-[1rem] flex-col '>
+            <div className='flex mt-[1rem] flex-col relative'>
               <label htmlFor="password" className='text-[14px]'>Password</label>
               <input
                 type="password"
@@ -90,7 +90,7 @@ const LogIn = () => {
                 value={userpassword}
                 placeholder='******'
                 className='h-[36px] rounded-lg mt-[4px]  outline-none border border-solid border-[#646468]'
-                onChange={(e) => {
+                onChange={(e) => { 
                     {/* Specifies how the password should be */}
                   setUserpassword(e.target.value);
                   const hasUpperCase = /[A-Z]/.test(e.target.value);
@@ -102,10 +102,10 @@ const LogIn = () => {
                 }}
                
               />
-              {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
+              {passwordError && <p className="bg-awhite absolute l top-16  z-50" style={{ color: 'red' }}>{passwordError}</p>}
             </div>
            
-           <div className='flex mt-[1rem] justify-between'>
+           <div className='flex  lg:mt-[1rem] justify-between'>
            <div className='flex '>
               <input
                 type="checkbox"
@@ -126,15 +126,15 @@ const LogIn = () => {
             </div>
            </div>
           </div>
-          <div className='mt-[4rem] h-[132px] flex flex-col items-center  justify-between'>
-          <button id="signupButton" className='w-48 lg:w-full h-[36px] active:bg-rose-500 text-white rounded-full bg-[#0100BB] text-center' type="submit">
+          <div className='lg:mt-[4rem] mt-12 h-[132px]  flex flex-col items-center  justify-between'>
+          <button id="signupButton" className='w-48 lg:w-full h-[36px] active:bg-rose-500 text-awhite lg:rounded-full rounded-lg  bg-[#0100BB] text-center' type="submit">
                   {isLoading ? (
                     <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
                     </p>
                     ):( 'Login'
                     )}
                 </button>
-            <p className='mt-[0.5rem]'>
+            <p className='lg:mt-[0.5rem] mt-3'>
               Don't have an account 
               <span className='text-[#0100BB] active:text-rose-500'>
                 <a href='/SignUp'> Sign up</a>

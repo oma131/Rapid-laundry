@@ -47,7 +47,7 @@ const Navbar = () => {
                 ))} */}
 
               <a href="/" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</a>
-              <a href="#" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</a>
+              <a href="/services" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</a>
               <a href="/pricing-page" onClick={() => handleMenuItemClick('link3')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link3' ? 'underline underline-offset-8 text-midnight' : ''} `}>Pricing</a>
 
             </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
 
           {/* Button */}
           <div className="flex items-center">
-            <a href='/signup' >
+            <a href='/booknow' >
               <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>
                 Book Now
               </button>
@@ -82,9 +82,9 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-red-400">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
             <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+            <a href="/pricing-page" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
             <button className="text-white bg-[#0100BB] hover:text-white px-14 py-2 rounded-md text-sm text-lg font-medium">Book Now</button>
           </div>
         </div>
