@@ -39,11 +39,26 @@ const SignUp = () => {
     }
   };
 
-  const responseMessage = (response) => {
-    console.log(response);
+  const handleGoogleLoginSuccess = async (response) => {
+    try {
+      const token = response.accessToken; // Obtain Google OAuth token
+      const backendResponse = await axios.post('https://rapidclean-laundry.onrender.com/api/user/register', { token }); // Send token to backend
+      console.log(backendResponse.data); // Handle backend response
+      setShowSuccessPopup(true);
+    } catch (error) {
+      console.error('Error logging in with Google:', error);
+      setRegistrationMessage('Error signing up with Google. Please try again later.');
+    }
   };
-  const errorMessage = (error) => {
-      console.log(error);
+
+  const handleGoogleLoginError = (error) => {
+    console.error('Google login error:', error);
+    setRegistrationMessage('Error signing up with Google. Please try again later.');
+  };
+
+  const handleVerificationSuccess = () => {
+    // Redirect to login page after successful verification
+    window.location.href = '/login';
   };
 
   return (
@@ -163,7 +178,7 @@ const SignUp = () => {
               <p className='text-[#94A3B8] text-[14px]'>Or</p>
               <hr  className='border border-[#94A3B8] w-16 lg:w-52'/>
             </div>
-            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+            <GoogleLogin onSuccess={handleGoogleLoginSuccess} onError={handleGoogleLoginError} />
           </div>
         </form>
         {registrationMessage && <p>{registrationMessage}</p>}

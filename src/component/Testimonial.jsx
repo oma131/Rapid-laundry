@@ -1,90 +1,258 @@
 import React from 'react';
+import Ashley from '../assets/Ashley.png'
+import Mike from '../assets/Mike.png'
+import Lady from '../assets/Lady.png'
 
-import person1Image from '../assets/person1.jpg';
-import person2Image from '../assets/person2.jpg';
-import person3Image from '../assets/person3.jpg';
 
-
-const testimonies = [
-    {
-      id: 1,
-      img: person1Image,
-      name: 'Ashley Janelle',
-      location: 'Sydney, USA',
-      text: '"With two young kids, laundry is a constant battle. RapidClean has been a game-changer!  Their service is so convenient, and I love being able to track my clothes while the kids are playing.  Its one less thing for me to worry about, and the clothes always come back stain-free!"',
-    },
-    {
-      id: 2,
-      img: person2Image,
-      name: 'Mike Zenith',
-      location: 'Sydney, New York',
-      text: ' RapidClean is a lifesaver!  As a working professional, I never have time for laundry.  Their convenient scheduling and real-time tracking allow me to get my clothes cleaned without any hassle.  Plus, the quality of service is amazing my clothes always come back looking fresh and crisp." ',
-    },
-    {
-      id: 3,
-      img: person3Image,
-      name: 'Mike Zenith',
-      location: 'Sydney, Australia',
-      text: 'RapidClean is a lifesaver!  As a working professional, I never have time for laundry.  Their convenient scheduling and real-time tracking allow me to get my clothes cleaned without any hassle.  Plus, the quality of service is amazing - my clothes a',
-    },
-    
-];
 
 const Testimonial = () => {
  
 
-    return (
-        <div className='bg-[#ECF0F5] my-[3rem]'>
-            <div className='overflow-x-hidden w-full pt-[3rem] pb-[7rem]'>
-                <h1 className='text-[1.3rem] w-full pt-[3rem] text-amidnight ml-[10rem] mb-[2rem] font-semibold  '>
-                    Our Voices of Satisfaction
-                </h1>
-                <div  className="grid ml-[10rem] w-full grid-cols-3 gap-x-6">
-                    {testimonies.map((testimonial, index) => (
-                        <div
-                            key={testimonial.id}
-                            
-                            className={`bg-[#ebebeb] w-[26rem] shadow-2xl hover:text-awhite gap-x-4 flex flex-col items-center justify-center rounded-xl px-[2rem] py-[3rem] mb-8 sm:mb-0 hover:bg-[#6261ff] bg-gray-800 ${index === 1 ? 'center' : ''}`}
-                        >
-                          
-                            <div className='mb-8 '>
-                        <p className="  h-auto text-[0.8rem] text-justify">{testimonial.text}</p>
-                            </div>
-                            <div className='flex w-[22rem] justify-between items-center'>
-                            <div className="flex items-center">
-                                <div className="flex-shrink-0">
-                                    <img
-                                        src={testimonial.img}
-                                        alt={testimonial.name}
-                                        className="w-12 h-12 rounded-full object-cover"
-                                    />
-                                </div>
-                                <div className="ml-4">
-                                    <h3 className="text-md text-white font-medium ">{testimonial.name}</h3>
-                            
-                                </div>
-                            </div>
-                            <div className='flex '>
-                                <span className="bg-gradient-to-t from-[#fff650] to-[#ffab17] icon-[ic--sharp-star] w-5 h-5  "></span>
-                                <span className="bg-gradient-to-t from-[#fff650] to-[#ffab17] icon-[ic--sharp-star] w-5 h-5  "></span>
-                                <span className="bg-gradient-to-t from-[#fff650] to-[#ffab17] icon-[ic--sharp-star] w-5 h-5 "></span>
-                                <span className="bg-gradient-to-t from-[#fff650] to-[#ffab17] icon-[ic--sharp-star] w-5 h-5 "></span>
-                                <span className="bg-gradient-to-t from-[#fff650] to-[#ffab17] icon-[ic--sharp-star] w-5 h-5 "></span>
-                            </div>
-                            </div>
-                        </div>
+  return (
+    <section className="bg-[]">
+        <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+            <h2 className="text-left text-2xl lg:text-4xl font-bold tracking-tight text-midnight ">
+                Our Voices of Satisfaction
+            </h2>
 
-                    ))}
-                </div>
-                  <div className='w-full flex justify-center mt-[3rem]'>   <button className={`hidden lg:flex md:flex text-awhite bg-[#6261ff] hover:text-[#6261ff] hover:border hover:border-[#6261ff] hover:bg-alight hover:text-[#6261ff] px-14 py-2 rounded-md  text-lg font-medium `}>
-                Read more Reviews
-              </button></div>
-                <div>
-                </div>
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+                <blockquote className="rounded-lg bg-[#6261FF] p-6 shadow-2xl sm:p-8">
+                    
+                    <p className="mt-4 text-[#F8F8F7] text-base">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                    consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus
+                    error officiis atque voluptates magnam!
+                    </p>
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between  mt-8">
+                        <div className='flex items-center gap-4'>
+                            <img
+                                alt=""
+                                src={Ashley}
+                                className="size-14 rounded-full object-cover"
+                            />
+                            <p className="mt-0.5 text-base font-medium text-[#F8F8F7]">Paul Starr</p>
+                        </div>
+                        
+
+                        <div>
+                            <div className="flex justify-center gap-0.5 text-[#FFAB17]">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                            </div>
+                        </div>                    
+                    </div>
+                    
+                </blockquote>
+                <blockquote className="rounded-lg bg-[#6261FF] p-6 shadow-2xl sm:p-8">
+                    
+                    <p className="mt-4 text-[#F8F8F7] text-base">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                    consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus
+                    error officiis atque voluptates magnam!
+                    </p>
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between  mt-8">
+                        <div className='flex items-center gap-4'>
+                            <img
+                                alt=""
+                                src={Mike}
+                                className="size-14 rounded-full object-cover"
+                            />
+                            <p className="mt-0.5 text-base font-medium text-[#F8F8F7]">Paul Starr</p>
+                        </div>
+                        
+
+                        <div>
+                            <div className="flex justify-center gap-0.5 text-[#FFAB17]">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                            </div>
+                        </div>                    
+                    </div>
+                    
+                </blockquote>
+                <blockquote className="rounded-lg bg-[#6261FF] p-6 shadow-2xl sm:p-8">
+                    
+                    <p className="mt-4 text-[#F8F8F7] text-base">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                    consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus
+                    error officiis atque voluptates magnam!
+                    </p>
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between  mt-8">
+                        <div className='flex items-center gap-4'>
+                            <img
+                                alt=""
+                                src={Lady}
+                                className="size-14 rounded-full object-cover"
+                            />
+                            <p className="mt-0.5 text-base font-medium text-[#F8F8F7]">Paul Starr</p>
+                        </div>
+                        
+
+                        <div>
+                            <div className="flex justify-center gap-0.5 text-[#FFAB17]">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                    />
+                                </svg>
+                            </div>
+                        </div>                    
+                    </div>
+                    
+                </blockquote>
             </div>
-            
+            <div className='w-full flex justify-center items-center mt-20 '>
+                <a
+                className="inline-block rounded bg-[#6261FF] text-center px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+                href="#"
+                >
+                    Read More Reviews
+                </a>
+            </div>
         </div>
-    );
+    </section>
+  );
 };
 
 export default Testimonial;

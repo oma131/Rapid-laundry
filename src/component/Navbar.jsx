@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../assets/Logo.png'
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,20 +46,20 @@ const Navbar = () => {
                   </Link>
                 ))} */}
 
-              <a href="/" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</a>
-              <a href="/services" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</a>
-              <a href="/pricing-page" onClick={() => handleMenuItemClick('link3')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link3' ? 'underline underline-offset-8 text-midnight' : ''} `}>Pricing</a>
+              <NavLink to="/" onClick={() => handleMenuItemClick('link1')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link1' ? 'underline underline-offset-8 text-midnight' : ''} `}>Home</NavLink>
+              <NavLink to="#" onClick={() => handleMenuItemClick('link2')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link2' ? 'underline underline-offset-8 text-midnight' : ''} `}>Services</NavLink>
+              <NavLink to="/pricing-page" onClick={() => handleMenuItemClick('link3')} className={`text-black hover:text-[#0100BB] px-3 py-2 rounded-md text-lg font-medium ${activeMenuItem === 'link3' ? 'underline underline-offset-8 text-midnight' : ''} `}>Pricing</NavLink>
 
             </div>
           </div>
 
           {/* Button */}
           <div className="flex items-center">
-            <a href='/booknow' >
+            <NavLink to='/dashboard' >
               <button onClick={handleButtonClick} className={`hidden lg:flex md:flex text-white bg-midnight hover:text-midnignt hover:border hover:border-midnight hover:bg-light hover:text-midnight px-14 py-2 rounded-md text-sm text-lg font-medium ${isButtonClicked ? 'bg-light border border-midnight text-midnight' : ''}`}>
                 Book Now
               </button>
-            </a>
+            </NavLink>
             <div className="-mr-2 flex md:hidden">
               <button onClick={() => setIsOpen(!isOpen)} type="button" className=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-[#0100BB] focus:outline-none   ">
                 <span className="sr-only">Open main menu</span>
