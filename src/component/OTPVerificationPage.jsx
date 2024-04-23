@@ -48,16 +48,16 @@ const OTPVerificationPage = () => {
       <ResetPassword />
      ) :(
     <div className='flex items-center'>
-      <div className='bg-white w-60  lg:w-[400px] rounded-[1rem] flex flex-col justify-center items-center gap-y-[2rem] py-[3rem]  '>
+      <div className='bg-awhite w-[20rem]  lg:w-[400px] rounded-md  lg:rounded-[1rem] flex flex-col justify-center items-center gap-y-[2rem] py-[3rem]  '>
         <div className='text-left'>
-          <h2 className='text-[3rem] mt-[1rem] lg:text-[40px] text-center text-customColor3 font-semibold'>OTP Verification</h2>
-          <h3 className='text-[1.3rem] mt-[0.5rem] font-[500] text-center text-[#646468]'>Enter the six digit code sent to your <br /> email address</h3>
+          <h2 className='text-[2rem] mt-[1rem] lg:text-[40px] text-center text-customColor3 font-semibold'>OTP Verification</h2>
+          <h3 className='lg:text-[1.3rem] mt-[0.5rem] font-[500] text-center text-[#646468]'>Enter the six digit code sent to your <br /> email address</h3>
         </div>
-        <form onSubmit={handleSubmit} className='w-[465] '>
+        <form onSubmit={handleSubmit} className='lg:w-[465] w-[18rem]'>
           <div className='  flex flex-col justify-between items-center'>
            
           <div className="rounded-md shadow-sm  -space-y-px">
-            <div className="grid px-[3rem] grid-cols-6 gap-2">
+            <div className="grid  grid-cols-6 gap-2">
               {otp.map((digit, index) => (
                 <input
                   key={index}
@@ -66,7 +66,7 @@ const OTPVerificationPage = () => {
                   maxLength={1}
                   placeholder='0'
                   onChange={(e) => handleChange(index, e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 bg-customColor4 rounded-md shadow-sm text-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="appearance-none block w-10 py-2 border border-alight bg-alight rounded-md shadow-sm text-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                   required
                   ref={(el) => (refs.current[index] = el)}
                 />
@@ -78,14 +78,14 @@ const OTPVerificationPage = () => {
               <p >Didn't receive a code? </p>
             
             <div>
-            <Link to="/ForgotPassword" className="text-sm text-customColor3 underline active:text-rose-500 relative -top-[0.1rem] underline-offset-2" >Resend</Link>
+            <Link to="/forgot-Password" className="text-sm text-amidnight underline active:text-rose-500 relative -top-[0.1rem] underline-offset-2" >Resend</Link>
             </div>
            </div>
           </div>
           <div className=' flex flex-col mt-[2rem] items-center  justify-between'>
-          <button id="signupButton" className='w-48 lg:w-[10rem] h-[36px] active:bg-rose-500 text-white rounded-full bg-[#0100BB] text-center' type="submit">
+          <button id="signupButton" className='w-48 lg:w-[10rem] h-[36px] active:bg-rose-500 text-awhite rounded-full bg-[#0100BB] text-center' type="submit">
                   {isLoading ? (
-                    <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-white "></span>{/* Add your SVG animation here */}
+                    <p>  Processing... <span class="icon-[svg-spinners--tadpole] ml-[0.5rem] text-awhite "></span>{/* Add your SVG animation here */}
                     </p>
                     ):( 'Submit'
                     )}
@@ -107,3 +107,4 @@ const OTPVerificationPage = () => {
 };
 
 export default OTPVerificationPage;
+

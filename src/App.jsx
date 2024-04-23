@@ -24,8 +24,10 @@ import UpdateProfile from './pages/userDashboard/UpdateProfile'
 import Home from './pages/userDashboard/Home'
 
 import PricingPage from './pages/PricingPage';
-
-
+import Calendar from './component/Calendar';
+import DateTimePicker from './component/DateTimePicker';
+import BookNow from './component/BookNow';
+import ServicePage from './pages/ServicePage';
 import Test from './pages/Test';
 
 const App = () => {
@@ -51,6 +53,10 @@ const App = () => {
         <Route path="/settings" element={<SidebarRouteWrapper><Settings /></SidebarRouteWrapper>} />
         <Route path="/logout" element={<SidebarRouteWrapper><Logout /></SidebarRouteWrapper>} />
         <Route path="/pricing-page" element={<PricingPage />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/date-time" element={<DateTimePicker />} />
+        <Route path="/booknow" element={<BookNow />} />
+        <Route path="/services" element={<ServicePage />} />
       </Routes>
     </Router>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../index.css'
 
-const HeroPricingPage = () => {
+const OrderFromCategories = () => {
   return (
     <div className='bg-[#ECF0F5] w-full h-[39rem] lg:h-[45rem] '>
        <div className='absolute z-0 overflow-hidden  py-[3rem] flex'>
@@ -15,7 +15,7 @@ const HeroPricingPage = () => {
               <p className=''> 
                 <span className=' lg:text-[3.5rem] text-[1.9rem] font-semibold text-[#0100BB] '> Laundry Piles Got  <br /><span className='lg:-mt-[1rem] -mt-[0.7rem] block '>You Down? <span className=' lg:text-[2.5rem] text-[1.7rem] font-medium text-[#646468] '>Get </span></span></span> <span className='lg:-mt-[1rem] -mt-[0.7rem] lg:text-[2.5rem] text-[1.7rem] block text-[#646468]  font-medium '> Sparkling Clothes Today <span className='lg:-mt-[1rem] -mt-[0.7rem] lg:text-[2.5rem] block text-[#646468] text-[1.7rem] font-medium '>with Easy Online Booking </span> <span className='lg:-mt-[1rem] -mt-[0.7rem] block lg:text-[2.5rem] text-[#646468] text-[1.7rem] font-medium '>& Transparent Pricing1</span></span>
               </p>
-              <button className="text-awhite bg-[#0100BB] lg:mt-[1.5rem] mt-[1.0rem] hover:text-awhite px-14 py-1 rounded-md lg:text-[1.9rem]  font-medium">Schedule Pickup</button>
+              <button className="text-white bg-[#0100BB] lg:mt-[1.5rem] mt-[1.0rem] hover:text-white px-14 py-1 rounded-md lg:text-[1.9rem]  font-medium">Schedule Pickup</button>
           </div>
           <div className=' lg:h-[30rem] h-[15rem] -ml-[1.4rem] lg:-ml-0 mt-[3rem] lg:mt-0 lg:w-[35rem] w-[18rem] '>
             <div className='absolute z-10 hero-image h-[15rem]  w-[18rem] lg:h-[30rem] lg:w-[35rem]'>
@@ -30,4 +30,4 @@ const HeroPricingPage = () => {
   )
 }
 
-export default HeroPricingPage;
+export default OrderFromCategories;

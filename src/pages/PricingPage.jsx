@@ -5,6 +5,7 @@ import Navbar from '../component/Navbar';
 import Footer from '../component/Footer'
 import HeroPricingPage from '../component/HeroPricingPage';
 import cardData from '../component/Cards/cardData';
+import PricingServiceEstimator from '../component/PricingServiceEstimator'
 
 
 const PricingPage = () => {
@@ -14,6 +15,7 @@ const PricingPage = () => {
      <Navbar />
      <HeroPricingPage />  
       <FigureCard data={cardData} />
+      <PricingServiceEstimator />
      <Footer />
       </div>
   )

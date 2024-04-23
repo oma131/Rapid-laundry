@@ -8,7 +8,7 @@ const SignUpSucessfulPage = () => {
   return (
     <div class="">
        
-     <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-white w-[17rem] rounded-[1rem] flex flex-col'>
+     <div className='items-center gap-y-[2rem] justify-center pt-[2rem] pb-[5rem] bg-awhite w-[17rem] rounded-[1rem] flex flex-col'>
      { /* Animated svg */}
         <motion.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const SignUpSucessfulPage = () => {
             Congratulations You have, <br />successfully created your <br />account
         </p>
       
-        <Link to="/" id="signupButton" className='w-[9rem] py-[0.5rem] text-white rounded-[0.3rem] bg-darkgreen text-center' type="submit">Continue</Link>
+        <Link to="/" id="signupButton" className='w-[9rem] py-[0.5rem] text-awhite rounded-[0.3rem] bg-adarkgreen text-center' type="submit">Continue</Link>
          </div>
     </div>
   );

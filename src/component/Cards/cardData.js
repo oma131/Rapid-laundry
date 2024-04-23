@@ -9,67 +9,85 @@ import trousersImage from '../../assets/Trousers-Image.png';
 
 const cardData = [
   {
-    id: 1,
+    id: 0,
     image: duvetImage,
     alt: 'Duvet Image',
     title: 'Duvet',
-    description: 'Description for Duvet'
+    description: 'Description for Duvet',
+    category: 'Duvet',
+    price: 50 // Price for Duvet
   },
   {
-    id: 2,
+    id: 1,
     image: gownsImage,
     alt: 'Gowns Image',
     title: 'Gowns',
-    description: 'Description for Gowns'
+    description: 'Description for Gowns',
+    category: 'Gowns',
+    price: 30 // Price for Gowns
   },
   {
-    id: 3,
+    id: 2,
     image: kaftanImage,
     alt: 'Kaftan Image',
     title: 'Kaftan',
-    description: 'Description for Kaftan'
+    description: 'Description for Kaftan',
+    category: 'Kaftan',
+    price: 40 // Price for Kaftan
   },
   {
-    id: 4,
+    id: 3,
     image: kaftan1Image,
     alt: 'Kaftan Image 1',
     title: 'Kaftan',
-    description: 'Description for Kaftan'
+    description: 'Description for Kaftan',
+    category: 'Kaftan1',
+    price: 45 // Price for Kaftan
   },
   {
-    id: 5,
+    id: 4,
     image: pleatedskirtImage,
     alt: 'Pleated Skirt Image',
     title: 'Pleated Skirt',
-    description: 'Description for Pleated Skirt'
+    description: 'Description for Pleated Skirt',
+    category: 'PleatedSkirt',
+    price: 35 // Price for Pleated Skirt
   },
   {
-    id: 6,
+    id: 5,
     image: shirtImage,
     alt: 'Shirt Image',
     title: 'Shirt',
-    description: 'Description for Shirt'
+    description: 'Description for Shirt',
+    category: 'Shirt',
+    price: 25 // Price for Shirt
   },
   {
-    id: 7,
+    id: 6,
     image: skirtImage,
     alt: 'Skirt Image',
     title: 'Skirt',
-    description: 'Description for Skirt'
+    description: 'Description for Skirt',
+    category: 'Skirt2',
+    price: 30 // Price for Skirt
   },
   {
-    id: 8,
+    id: 7,
     image: trousersImage,
     alt: 'Trousers Image',
     title: 'Trousers',
-    description: 'Description for Trousers'
+    description: 'Description for Trousers',
+    category: 'Trousers',
+    price: 40 // Price for Trousers
   },
   {
-    id: 9,
+    id: 8,
     image: duvetImage,
     alt: 'Duvet Image',
     title: 'Duvet',
-    description: 'Description for Duvet'
+    description: 'Description for Duvet',
+    category: 'Duvet2',
+    price: 50 // Price for Duvet
   }
   // Add more card data objects as needed
 ];

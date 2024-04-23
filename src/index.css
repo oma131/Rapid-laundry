@@ -22,3 +22,14 @@ body {
 .hero-image {
     @apply bg-[url('./assets/hero-pricing-image.png')] bg-contain bg-no-repeat 
   }
+  .service-image {
+    @apply bg-[url('./assets/services-banner.png')] bg-cover bg-no-repeat 
+  }
+  .clothe-ironing-image {
+    @apply bg-[url('./assets/clothe-ironing.png')] bg-cover bg-no-repeat 
+  }
+  .hovered-date {
+    background-color: #4299e1; /* Your desired color */
+    color: #ffffff; /* Text color */
+  }
+  
