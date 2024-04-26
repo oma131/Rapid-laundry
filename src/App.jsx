@@ -26,10 +26,21 @@ import Home from './pages/userDashboard/Home'
 import PricingPage from './pages/PricingPage';
 import Calendar from './component/Calendar';
 import DateTimePicker from './component/DateTimePicker';
-import BookNow from './component/BookNow';
+import BookNow1 from './component/BookNow';
 import ServicePage from './pages/ServicePage';
 import Test from './pages/Test';
+import AdminSidebar from './component/AdminSidebar';
+import ToggleSwitch from './component/Toggle';
 
+
+import AdminDashboard from './pages/AdminDashboard/Dashboard'
+import CustomerList from './pages/AdminDashboard/CustomerList'
+import ProductList from './pages/AdminDashboard/ProductList';
+import OrderList from './pages/AdminDashboard/OrdersList'
+import AdminNotification from './pages/AdminDashboard/Notification'
+import AdminSettings from './pages/AdminDashboard/Settings'
+import AdminLogout from './pages/AdminDashboard/Logout';
+import AddProduct from './pages/AdminDashboard/AddProducts';
 const App = () => {
   return (
     <Router>
@@ -42,6 +53,7 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/toggle" element={<ToggleSwitch />} />
 
         <Route path="/dashboard/*" element={<DashboardWithSidebar />} />
         <Route path="/bookNow" element={<SidebarRouteWrapper><BookNow /></SidebarRouteWrapper>} />
@@ -55,8 +67,18 @@ const App = () => {
         <Route path="/pricing-page" element={<PricingPage />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/date-time" element={<DateTimePicker />} />
-        <Route path="/booknow" element={<BookNow />} />
+        <Route path="/booknow1" element={<BookNow1 />} />
         <Route path="/services" element={<ServicePage />} />
+
+
+        <Route path="/admin-dashboard/*" element={<DashboardWithAdminSidebar />} />  
+        <Route path="/customers-list" element={<AdminSidebarRouteWrapper><CustomerList /></AdminSidebarRouteWrapper>} /> 
+        <Route path="/products-list" element={<AdminSidebarRouteWrapper><ProductList /></AdminSidebarRouteWrapper>} /> 
+        <Route path="/orders-list" element={<AdminSidebarRouteWrapper><OrderList /></AdminSidebarRouteWrapper>} /> 
+        <Route path="/admin-notifications" element={<AdminSidebarRouteWrapper><AdminNotification /></AdminSidebarRouteWrapper>} /> 
+        <Route path="/admin-settings" element={<AdminSidebarRouteWrapper><AdminSettings /></AdminSidebarRouteWrapper>} /> 
+        <Route path="/admin-logout" element={<AdminSidebarRouteWrapper><AdminLogout /></AdminSidebarRouteWrapper>} />
+        <Route path="/add-products" element={<AdminSidebarRouteWrapper><AddProduct /></AdminSidebarRouteWrapper>} />  
       </Routes>
     </Router>
   )
@@ -77,6 +99,22 @@ function DashboardWithSidebar() {
     </Sidebar>
   );
 }
+function DashboardWithAdminSidebar() {
+  return (
+    <AdminSidebar>
+      <AdminDashboard />
+    </AdminSidebar>
+  );
+}
+
+function AdminSidebarRouteWrapper({ children }) {
+  return (
+    <AdminSidebar>
+      {children}
+    </AdminSidebar>
+  );
+}
+
 
 
 

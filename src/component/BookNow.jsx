@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
 
-const BookNow = () => {
+const BookNow1 = () => {
   // State for form fields and errors
   const [formData, setFormData] = useState({
     name: '',
@@ -166,4 +166,4 @@ const BookNow = () => {
   );
 };
 
-export default BookNow;
+export default BookNow1;

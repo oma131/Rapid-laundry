@@ -32,4 +32,32 @@ body {
     background-color: #4299e1; /* Your desired color */
     color: #ffffff; /* Text color */
   }
-  
+/* ToggleSwitch.css */
+.toggle__line {
+  width: 3rem; /* Adjust the width as needed */
+  height: 1.5rem; /* Adjust the height as needed */
+  background-color: #9ca3af; /* gray-400 */
+  border-radius: 0.75rem; /* Adjust the border-radius as needed */
+}
+
+.toggle__dot {
+  width: 1.25rem; /* Adjust the width as needed */
+  height: 1.25rem; /* Adjust the height as needed */
+  background-color: #ffffff; /* white */
+  border-radius: 50%;
+  box-shadow: 0 0.05rem 0.15rem rgba(0, 0, 0, 0.1); /* shadow-md */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 0.125rem; /* Adjust the left position as needed */
+  transform: translateY(-50%) translateX(0); /* Center vertically */
+  transition: transform 0.3s ease-in-out;
+}
+
+
+input:checked + .toggle__line {
+  background-color: #10b981; /* green-500 */
+}
+
+input:checked + .toggle__line + .toggle__dot {
+  transform: translateX(100%) translateY(-50%);
+}

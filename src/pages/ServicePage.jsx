@@ -5,7 +5,7 @@ import Footer from '../component/Footer'
 import ServiceBanner from '../component/ServicesBanner';
 import ServiceDryCleaning from '../component/ServiceDryCleaning';
 import OurServices  from "../component/OurServices"
-import Testimonial from '../component/Testimonial';
+import Testimonial from '../component/Testimonial1';
 
 const ServicePage = () => {
   return (
