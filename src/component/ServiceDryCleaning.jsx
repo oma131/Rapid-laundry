@@ -12,7 +12,7 @@ const ServiceDryCleaning = () => {
             </div>
             <div className="flex w-full justify-center items-center">
       {/* Division A */}
-      <div className="flex w-[90rem] justify-between p-12">
+      <div className="flex w-[100rem] justify-between p-12">
         {/* Division B */}
         <div className=" flex flex-col gap-y-6 mb-8">
           <h2 className="text-[3rem] text-amidnight font-semibold mb-4">Rapid Clean</h2>
