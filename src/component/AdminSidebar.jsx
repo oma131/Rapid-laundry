@@ -45,7 +45,7 @@ const AdminSidebar = ({ children }) => {
 
     return (
         <div className="flex flex-col md:flex-row">
-            <nav className="w-full md:w-48 md:h-screen md:bg-black/5 md:text-black fixed md:fixed overflow-y-auto shadow-2xl bottom-0 md:top-0 md:left-0">
+            <nav className="w-full bg-[#ecf0f5]  md:w-48 md:h-screen md:bg-black/5 md:text-ablack fixed md:fixed overflow-y-auto shadow-2xl bottom-0 md:top-0 md:left-0">
                 <div className="hidden p-4 md:flex items-center justify-center md:justify-start">
                     <img src={Logo} alt='Rapid clean logo' />
                 </div>
@@ -54,7 +54,7 @@ const AdminSidebar = ({ children }) => {
                         <NavLink
                             key={index}
                             to={item.path}
-                            className={`p-4 flex items-center gap-4 text-darkgrey hover:text-midnight hover:font-bold ${
+                            className={`p-4 flex items-center gap-4 text-adarkgrey hover:text-amidnight hover:font-bold ${
                                 activeLink === index ? 'bg-grey text-midnight font-bold' : ''
                             }`}
                             onClick={() => handleNavLinkClick(index)}
@@ -66,7 +66,7 @@ const AdminSidebar = ({ children }) => {
                     <div className="md:block hidden absolute bottom-0 left-0 w-full  mb-24">
                         <NavLink
                             to="/admin-logout"
-                            className={`p-4 flex items-center gap-4 text-black hover:text-midnight hover:font-bold ${
+                            className={`p-4 flex items-center gap-4 text-black hover:text-amidnight hover:font-bold ${
                                 location.pathname === '/logout' ? 'bg-grey text-midnight font-bold' : ''
                             }`}
                             onClick={() => setActiveLink(null)}
@@ -78,12 +78,12 @@ const AdminSidebar = ({ children }) => {
                 </div>
             </nav>
             <main className="flex-1 z-10 ml-0 md:ml-48 overflow-y-auto">{children}</main>
-            <div className="md:hidden flex justify-around w-full bg-light text-black z-20 fixed bottom-0">
+            <div className="md:hidden flex justify-around w-full bg-alight text-black z-20 fixed bottom-0">
                 {menuItem.map((item, index) => (
                     <NavLink
                         key={index}
                         to={item.path}
-                        className={`p-4 flex items-center gap-4 text-darkgrey ${
+                        className={`p-4 flex items-center gap-4 text-adarkgrey ${
                             activeLink === index ? 'bg-grey text-midnight font-bold' : ''
                         }`}
                         onClick={() => handleNavLinkClick(index)}
@@ -93,8 +93,8 @@ const AdminSidebar = ({ children }) => {
                 ))}
                 <NavLink
                     to="/logout"
-                    className={`p-4 flex items-center gap-4 text-black ${
-                        location.pathname === '/admin-logout' ? 'bg-grey text-midnight font-bold' : ''
+                    className={`p-4 flex items-center gap-4 text-ablack ${
+                        location.pathname === '/admin-logout' ? 'bg-grey text-amidnight font-bold' : ''
                     }`}
                     onClick={() => setActiveLink(null)}
                 >
