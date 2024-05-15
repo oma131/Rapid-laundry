@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom"
-import ResetPassword from '../pages/ResetPassword';
+import AdminResetPassword from '../pages/AdminResetPassword';
 
-const OTPVerificationPage = () => {
+const AdminOTPVerificationPage = () => {
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [errorMessage, setErrorMessage] = useState('');
@@ -45,7 +45,7 @@ const OTPVerificationPage = () => {
   return (
     <div>
      {verificationSuccess ? (
-      <ResetPassword />
+      <AdminResetPassword />
      ) :(
     <div className='flex items-center'>
       <div className='bg-awhite w-[20rem]  lg:w-[400px] rounded-md  lg:rounded-[1rem] flex flex-col justify-center items-center gap-y-[2rem] py-[3rem]  '>
@@ -108,5 +108,5 @@ const OTPVerificationPage = () => {
   );
 };
 
-export default OTPVerificationPage;
+export default AdminOTPVerificationPage;
 

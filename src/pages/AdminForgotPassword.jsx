@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import OTPVerificationPage from '../component/OTPVerificationPage';
+import AdminOTPVerificationPage from '../component/AdminOTPVerificationPage';
 
 
-const ForgotPassword =() => {
+const AdminForgotPassword =() => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
   const [resetSuccess, setResetSuccess] = useState(false);
@@ -37,7 +37,7 @@ const ForgotPassword =() => {
     
     <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
        {resetSuccess ? (
-        <OTPVerificationPage />
+        <AdminOTPVerificationPage />
         ) : (
     <div className='flex items-center'>
       <div className='bg-white w-60 md:w-96 lg:w-[530px] rounded-[2rem] flex flex-col justify-center py-[3rem] px-[2rem]'>
@@ -87,4 +87,4 @@ const ForgotPassword =() => {
   );
 };
 
-export default ForgotPassword;
+export default AdminForgotPassword;

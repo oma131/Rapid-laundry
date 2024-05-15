@@ -30,27 +30,28 @@ const testimonies = [
     
 ];
 
-const Testimonial = () => {
+const Testimonial1 = () => {
  
 
     return (
         <div className='bg-[#ECF0F5] my-[3rem]'>
-            <div className=' flex items-center flex-col pt-[3rem] pb-[7rem]'>
-                <h1 className='text-[2rem] w-[90rem] pt-[3rem] text-amidnight ml-[10rem] mb-[2rem] font-semibold  '>
+            <div className=' flex items-center flex-col pt-[3rem] pb-[3rem] lg:pb-[7rem]'>
+                <h1 className='text-[2rem] lg:w-full pt-[3rem] text-amidnight ml-[2rem] lg:pl-[7rem] lg:ml-0 mb-[2rem] font-semibold  '>
                     Our Voices of Satisfaction
                 </h1>
-                <div  className="grid ml-[10rem] w-[90rem] grid-cols-3 gap-x-6">
+               <div className='lg:w-full lg:pl-[4rem] lg:h-[24rem] h-[34rem]  overflow-scroll' style={{ scrollbarWidth: 'none' }}>
+                 <div  className="grid   lg:w-[82rem] grid-cols-1 lg:grid-cols-3 gap-x-6">
                     {testimonies.map((testimonial, index) => (
                         <div
                             key={testimonial.id}
                             
-                            className={`bg-[#ebebeb] w-[28rem] shadow-2xl hover:text-awhite gap-x-4 flex flex-col items-center justify-center rounded-xl px-[2rem] py-[3rem] mb-8 sm:mb-0 hover:bg-[#6261ff] bg-gray-800 ${index === 1 ? 'center' : ''}`}
+                            className={`bg-[#ebebeb] lg:w-[26rem] w-[20rem] mx-[2rem] shadow-2xl hover:text-awhite gap-x-4 flex flex-col items-center justify-center rounded-xl px-[1.5rem] py-[3rem] mb-8 sm:mb-0 hover:bg-[#6261ff] bg-gray-800 ${index === 1 ? 'center' : ''}`}
                         >
                           
                             <div className='mb-8 '>
                         <p className="  h-auto text-[1rem] text-justify">{testimonial.text}</p>
                             </div>
-                            <div className='flex w-[22rem] justify-between items-center'>
+                            <div className='flex lg:w-[20rem] w-[18rem] justify-between items-center'>
                             <div className="flex items-center">
                                 <div className="flex-shrink-0">
                                     <img
@@ -75,7 +76,7 @@ const Testimonial = () => {
                         </div>
 
                     ))}
-                </div>
+                </div></div>
                   <div className='w-full flex justify-center mt-[4rem]'>   <button className={`hidden lg:flex md:flex text-awhite bg-[#6261ff] hover:text-[#6261ff] hover:border hover:border-[#6261ff] hover:bg-alight hover:text-[#6261ff] px-14 py-2 rounded-md  text-lg font-medium `}>
                 Read more Reviews
               </button></div>
@@ -87,4 +88,4 @@ const Testimonial = () => {
     );
 };
 
-export default Testimonial;
+export default Testimonial1;

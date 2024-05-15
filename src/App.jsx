@@ -34,6 +34,9 @@ import ToggleSwitch from './component/Toggle';
 
 
 import AdminDashboard from './pages/AdminDashboard/Dashboard'
+import AdminSignUp from './pages/AdminSignUp';
+import AdminLogIn from './pages/AdminLogIn';
+import AdminForgotPassword from './pages/AdminForgotPassword';
 import CustomerList from './pages/AdminDashboard/CustomerList'
 import ProductList from './pages/AdminDashboard/ProductList';
 import OrderList from './pages/AdminDashboard/OrdersList'
@@ -41,6 +44,7 @@ import AdminNotification from './pages/AdminDashboard/Notification'
 import AdminSettings from './pages/AdminDashboard/Settings'
 import AdminLogout from './pages/AdminDashboard/Logout';
 import AddProduct from './pages/AdminDashboard/AddProducts';
+
 const App = () => {
   return (
     <Router>
@@ -54,6 +58,10 @@ const App = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/test" element={<Test />} />
         <Route path="/toggle" element={<ToggleSwitch />} />
+        <Route path="/admin-signup" element={<AdminSignUp />} />
+        <Route path="/admin-login" element={<AdminLogIn />} />
+        <Route path="/admin-forgot-password" element={<AdminForgotPassword />} />
+        
 
         <Route path="/dashboard/*" element={<DashboardWithSidebar />} />
         <Route path="/bookNow" element={<SidebarRouteWrapper><BookNow /></SidebarRouteWrapper>} />

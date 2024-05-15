@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import PricePerItem from '../component/PricePerItem';
+import FigureCard from '../component/Cards/FigureCard';
 import Navbar from '../component/Navbar';
 import Footer from '../component/Footer'
 import HeroPricingPage from '../component/HeroPricingPage';
 import cardData from '../component/Cards/cardData';
-import ServicePricing from '../component/ServicePricing';
-import PricingLastComponent from '../component/PricingLastComponent';
+import PricingServiceEstimator from '../component/PricingServiceEstimator'
 
 
 const PricingPage = () => {
@@ -15,9 +14,8 @@ const PricingPage = () => {
         {/* Home Page */}
      <Navbar />
      <HeroPricingPage />  
-     <PricePerItem />
-     <ServicePricing />
-    <PricingLastComponent /> 
+      <FigureCard data={cardData} />
+      <PricingServiceEstimator />
      <Footer />
       </div>
   )

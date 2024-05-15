@@ -61,7 +61,7 @@ const AdminDashboard = () => {
  // Set default width and height
  let width = 500;
  let height = 400;
-// testing
+
  // Check screen size and update width and height accordingly
  if (window.innerWidth <= 768) { // Check if screen width is less than or equal to 768px (considering as phone screen)
    width = 300;
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
     <div>
       <AdminTopbar />
       <div>
-      <div className="grid w-[65rem] mt-3 mb-6  lg:ml-[1rem] lg:grid-cols-3 grid-cols-1  gap-x-2 justify-center">
+      <div className="grid xl:max-w-[65rem]  w-full mt-3 mb-6  lg:ml-[1rem] lg:grid-cols-2 xl:grid-cols-3  grid-cols-1  gap-x-2 justify-center">
       {data.map((item, index) => (
         <div key={index} className="bg-alight m-[1rem] rounded-md px-[2rem] py-4 flex items-center lg:w-[21rem] w-[21rem] gap-x-4 shadow-xl">
           <div className={`h-[6rem] w-[6rem] flex items-center justify-center rounded-full ${item.bgColorClassName}`}>
@@ -89,7 +89,7 @@ const AdminDashboard = () => {
         </div>
       ))}
     </div>
-  <div className='flex flex-col mx-4 lg:mx-0 lg:flex-row justify-center gap-y-8 lg:gap-x-4 lg:w-[65rem] w-[33rem] '>
+  <div className='flex flex-col mx-4 xl:mx-0 xl:flex-row justify-center gap-y-8 xl:gap-x-4 xl:w-[65rem] w-[33rem] '>
   <div className=' bg-[#ecf0f5] rounded-md lg:w-[35rem] w-[22rem] py-8 px-[2rem] '> <Graph width={width} height={height} /></div>
  <div className='flex flex-col gap-y-4'>
  <div className="container w-[21.5rem] lg:w-[24rem] py-6  lg:h-[23rem] h-[21rem] rounded-md flex gap-y-4 flex-col justify-center items-center bg-[#ecf0f5]">
