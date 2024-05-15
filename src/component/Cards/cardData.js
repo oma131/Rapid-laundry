@@ -87,7 +87,7 @@ const cardData = [
     title: 'Duvet',
     description: 'Description for Duvet',
     category: 'Duvet2',
-    price: 50 // Price for Duvet
+    price: 506 // Price for Duvet
   }
   // Add more card data objects as needed
 ];

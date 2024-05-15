@@ -5,9 +5,11 @@ import bubaIcons from '../../assets/Buba.png'
 import towelIcons from '../../assets/towel.png'
 import undergIcons from '../../assets/underg.png'
 import AdminProductPagination from '../../component/AdminProductPages';
+import CustomInputComponent from '../../component/CustomInputComponent'; // Importing the custom input component
+import CustomInputComponentid from '../../component/CustomInputComponentid'; // Importing the custom input component
 const ProductList = () => {
- 
-  const data = [
+  const [searchQuery, setSearchQuery] = useState('');
+  const initialData = [
     { 
       id: 12345, 
      ProductName: 'Academic/Law Gown' ,
@@ -92,6 +94,35 @@ const ProductList = () => {
     }
   ];
   
+  // Function to handle row deletion
+  const handleDeleteRow = (index) => {
+    setData((prevData) => {
+      // Filter out the row to be deleted
+      const newData = prevData.filter((_, i) => i !== index);
+      return newData;
+    });
+  };
+  const [editMode, setEditMode] = useState(false);
+  const [data, setData] = useState(initialData);
+
+ // Step 2: Toggle Edit Mode Function
+ const toggleEditMode = () => {
+  setEditMode(!editMode);
+};
+
+const filterData = () => {
+  return data.filter((item) =>
+    item.id.toString().includes(searchQuery) || // Filter by ID
+    item.ProductName.toLowerCase().includes(searchQuery.toLowerCase()) || // Filter by customer name
+    item.Categories.includes(searchQuery) || // Filter by phone number
+    item.Price.toLowerCase().includes(searchQuery.toLowerCase()) || // Filter by email
+    item.Price1.toLowerCase().includes(searchQuery.toLowerCase()) // Filter by address
+    
+  );
+};  
+const handleInputChange = (event) => {
+  setSearchQuery(event.target.value);
+};
 
   
 
@@ -110,6 +141,8 @@ const ProductList = () => {
               <input
                 type="text"
                 placeholder="Search"
+                value={searchQuery}
+                onChange={handleInputChange}
                 className="bg-white w-32 md:w-[25rem] text-black lg:rounded-lg rounded-md pl-9 pr-4 py-1 lg:py-3 border border-darkgrey focus:outline-none focus:ring focus:border-amidnight"
               /> 
                  <a href='/add-products' className="hidden lg:flex flex gap-x-2 lg:px-6 px-3 lg:py-3 py-1 lg:rounded-lg mb-1 rounded-md text-awhite bg-amidnight items-center">
@@ -117,16 +150,16 @@ const ProductList = () => {
                 <span className="icon-[ic--baseline-plus] lg:w-7 lg:h-7 h-5 w-5"></span>
               </a>
               
-              <div className="hidden lg:flex flex gap-x-2 lg:px-6 px-3 lg:py-3 py-1 lg:rounded-lg mb-1 rounded-md text-awhite bg-amidnight items-center">
-                <span className="text-blue-500 text-[1.1rem] lg:text-[1.3rem]">Edit</span>
+              <div className="hidden lg:flex flex gap-x-2 lg:px-6 px-3 lg:py-3 py-1 lg:rounded-lg mb-1 rounded-md text-awhite bg-amidnight items-center" onClick={toggleEditMode}>
+                <span className="text-blue-500 text-[1.1rem] lg:text-[1.3rem]">{editMode ? 'Save' : 'Edit'}</span>
                 <span className="icon-[uil--edit] lg:w-7 lg:h-7 h-5 w-5"></span>
               </div>
             </div>
            </div>
            <div className='flex items-center w-full justify-between'>
               
-              <div className=" lg:hidden flex gap-x-2 lg:px-6 px-3 lg:py-3 py-1 lg:rounded-lg rounded-md mb-1 text-awhite bg-amidnight items-center">
-                <span className="text-blue-500 text-[1.1rem] lg:text-[1.3rem]">Edit</span>
+              <div className=" lg:hidden flex gap-x-2 lg:px-6 px-3 lg:py-3 py-1 lg:rounded-lg rounded-md mb-1 text-awhite bg-amidnight items-center" onClick={toggleEditMode}>
+                <span className="text-blue-500 text-[1.1rem] lg:text-[1.3rem]">{editMode ? 'Save' : 'Edit'}</span>
                 <span className="icon-[uil--edit] lg:w-7 lg:h-7 h-5 w-5"></span>
               </div>
               <a href='/add-products' className=" lg:hidden flex  gap-x-1  w-[10rem] lg:py-3 py-1  rounded-md text-awhite bg-amidnight items-center justify-center">
@@ -139,7 +172,7 @@ const ProductList = () => {
           <div className="py-4">
             {/* Body content */}
             <div className="overflow-x-auto border border-[#adadad] rounded-md" style={{ scrollbarWidth: 'none' }}>
-              <table className="table-fixed lg:w-[65rem]">
+              <table className="table-fixed w-[65rem] xl:w-full">
                 <thead>
                   <tr className="bg-[#ecf0f5] lg:text-[1.3rem] text-[1.1rem] border-b border-[#adadad]">
                     <th className="px-4 py-3 flex items-center gap-x-1">
@@ -153,26 +186,59 @@ const ProductList = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((row, index) => (
-                    <tr
-                      key={row.id}
-                      className={`lg:text-[1.1rem] text-[1rem] ${
-                        index !== data.length - 1 ? 'border-b border-[#adadad]' : ''
-                      } ${row.initialColor}`}
-                    >
-                      <td className="px-4 lg:py-6 py-12 text-center flex items-center gap-x-1">
-                        <span className="icon-[fluent--checkmark-square-20-regular] lg:w-12 lg:h-12 w-10 h-10 text-amidnight"></span>
-                        {row.id}
+                {filterData().map((row, rowIndex) => (
+  <tr
+    key={row.id}
+    className={`lg:text-[1.1rem] text-[1rem] ${
+      rowIndex !== filterData().length - 1 ? 'border-b border-[#adadad]' : ''
+    } ${row.initialColor}`}
+  >
+    <td className="px-4 py-2 flex items-center ">
+      <span className="icon-[fluent--checkmark-square-20-regular] w-12 h-12 text-amidnight"></span>
+      {/* Assuming row.id is the value you want to edit */}
+      <CustomInputComponentid
+        value={row.id}
+        onChange={(newValue) => handleIdChangeid(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+    </td>
+    <td className="px-4 py-auto">
+    <span className='flex items-center '> <img className='W-12 h-12 object-cover' src={row.image} alt="" />
+      <CustomInputComponent
+        value={row.ProductName}
+        onChange={(newValue) => handleProductNameChange(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+      </span>
+    </td>
+    <td className="px-4 py-2 text-center">
+      <CustomInputComponent
+        value={row.Categories}
+        onChange={(newValue) => handleCategoriesChange(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+    </td>
+    <td className="px-4 py-2 text-center">
+      <CustomInputComponent
+        value={row.Price}
+        onChange={(newValue) => handlePriceChange(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+    </td>
+    <td className="px-4 py-2 text-center">
+      <CustomInputComponent
+        value={row.Price1}
+        onChange={(newValue) => handlePrice1Change(newValue, rowIndex)} 
+        isReadOnly={!editMode}
+      />
+    </td>
+    {/* Move the div inside the table cell */}
+    
+    <td className="px-4 py-2 text-center">
+                      <span className="icon-[mage--trash-3] w-12 h-12 text-[#990404]" onClick={() => handleDeleteRow(rowIndex)} ></span>
                       </td>
-                      <td className="px-4 py-2 text-center"><span className='flex items-center gap-x-2'> <img className='W-12 h-12 object-cover' src={row.image} alt="" />{row.ProductName}</span></td>
-                      <td className="px-4 py-2 text-center">{row.Categories}</td>
-                      <td className="px-4 py-2 text-center">{row.Price}</td>
-                      <td className="px-4 py-2 text-center">{row.Price1}</td>
-                      <td className="px-4 py-2 text-center">
-                      <span className="icon-[mage--trash-3] w-12 h-12 text-[#990404]"></span>
-                      </td>
-                    </tr>
-                  ))}
+  </tr>
+))}
                 </tbody>
               </table>
             </div>

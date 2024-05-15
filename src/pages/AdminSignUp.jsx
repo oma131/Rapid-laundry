@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import SignUpSucessfulPage  from '../component/SignUpSuccessfulPage'; 
 import { GoogleLogin } from '@react-oauth/google';
+import {  Navigate } from 'react-router-dom';
 // import SignupImg from '../assets/SignupImg.png'
 
-const SignUp = () => {
+const AdminSignUp = () => {
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [userpassword, setUserpassword] = useState('');
@@ -64,13 +64,13 @@ const SignUp = () => {
   return (
    <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
     {SignUpSuccessful ? (
-        <SignUpSucessfulPage /> // Render ErrorPage if signupError is true
+         <Navigate to="/admin-dashboard" replace /> 
       ) : (
     <div className='flex items-center'>
       <div className='bg-white w-60  lg:w-[577px] rounded-lg flex flex-col justify-center p-6'>
         <div className='text-left'>
           <h2 className='text-[34px] lg:text-[40px] font-semibold'>Welcome to Rapid Clean</h2>
-          <h3 className='text-[24px] font-[500] text-[#646468]'>Create an account</h3>
+          <h3 className='text-[24px] font-[500] text-[#646468]'>Create an account to access admin dashboard</h3>
         </div>
         <form onSubmit={handleSubmit} className='w-[465] mt-[16px]'>
           <div className='h-[304px] flex flex-col justify-between'>
@@ -170,7 +170,7 @@ const SignUp = () => {
             <p>
               Already have an account? 
               <span className='text-[#0100BB] active:text-rose-500'>
-                <a href='/login'> Log in</a>
+                <a href='/admin-login'> Log in</a>
               </span>  
             </p>
             <div className=' flex items-center justify-between'>
@@ -192,4 +192,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default AdminSignUp;

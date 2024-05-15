@@ -5,7 +5,7 @@ import Footer from '../component/Footer'
 import ServiceBanner from '../component/ServicesBanner';
 import ServiceDryCleaning from '../component/ServiceDryCleaning';
 import OurServices  from "../component/OurServices"
-import Testimonial from '../component/Testimonial1';
+import Testimonial1 from '../component/Testimonial1';
 
 const ServicePage = () => {
   return (
@@ -15,7 +15,7 @@ const ServicePage = () => {
      <ServiceBanner />  
       <ServiceDryCleaning />
       <OurServices />
-      <Testimonial />
+      <Testimonial1 />
      <Footer />
       </div>
   )

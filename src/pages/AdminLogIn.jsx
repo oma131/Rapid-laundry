@@ -5,7 +5,7 @@ import ErrorLoginPage  from '../component/ErrorLoginPage';
 import { Link, Navigate } from 'react-router-dom';
 // import SignupImg from '../assets/SignupImg.png'
 
-const LogIn = () => {
+const AdminLogIn = () => {
  
   const [email, setEmail] = useState('');
   const [userpassword, setUserpassword] = useState('');
@@ -47,7 +47,7 @@ const LogIn = () => {
   return (
    <div className='bg-[#EBEBEB] max-w-screen-2xl mx-auto p-4 flex justify-center items-center min-h-screen'>
      {redirect ? (
-       <Navigate to="/" replace /> 
+       <Navigate to="/admin-dashboard/*" replace /> 
       // Render ErrorPage if loginError is true
       ) : loginError ? (
         <ErrorLoginPage />
@@ -56,7 +56,7 @@ const LogIn = () => {
       <div className='bg-awhite w-[340px]  pl-4 lg:pl-0 lg:w-[520px] lg:rounded-[2rem] rounded-md flex flex-col justify-center lg:items-center py-[4rem] lg:px-[3rem]'>
         <div className='lg:text-left'>
           <h2 className='text-[27px] lg:text-[40px] lg:text-center font-semibold'>Welcome Back</h2>
-          <h3 className='text-[19px] font-[500] lg:text-center text-[#646468]'>Please enter your details to login</h3>
+          <h3 className='text-[19px] ml-4 font-[500] lg:text-center text-[#646468]'>enter your details to login in to admin dashboard</h3>
         </div>
         <form onSubmit={handleSubmit} className='lg:w-[465] w-[320px] mt-[16px]'>
           <div className='h-[170px] lg:mt-[0.5rem] flex flex-col justify-between'>
@@ -159,4 +159,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default AdminLogIn;

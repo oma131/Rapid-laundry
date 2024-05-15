@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import AdminTopbar from '../../component/AdminTopbar';
 import AdminOrderPagination from '../../component/AdminOrderPages';
+import CustomInputComponent from '../../component/CustomInputComponent'; // Importing the custom input component
+import CustomInputComponentid from '../../component/CustomInputComponentid'; // Importing the custom input component
 
 const OrdersList = () => {
-  
-  const data = [
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const initialData = [
     { 
       id: 12345, 
       Customer: 'Ebiye Ekong', 
@@ -107,7 +110,26 @@ const OrdersList = () => {
     }
   ];
   
-  
+  const [editMode, setEditMode] = useState(false);
+  const [data, setData] = useState(initialData);
+
+ // Step 2: Toggle Edit Mode Function
+ const toggleEditMode = () => {
+  setEditMode(!editMode);
+};
+const filterData = () => {
+  return data.filter((item) =>
+    item.id.toString().includes(searchQuery) || // Filter by ID
+    item.Customer.toLowerCase().includes(searchQuery.toLowerCase()) || // Filter by customer name
+    item.OrderDate.toLowerCase().includes(searchQuery.toLowerCase()) || //filter by order date 
+    item.DeliveryDate.includes(searchQuery) || // Filter by phone number
+    item.Amount.toLowerCase().includes(searchQuery.toLowerCase()) || // Filter by email
+    item.text.toLowerCase().includes(searchQuery.toLowerCase()) // Filter by address
+  );
+};  
+const handleInputChange = (event) => {
+  setSearchQuery(event.target.value);
+}; 
 
   
 
@@ -125,10 +147,12 @@ const OrdersList = () => {
               <input
                 type="text"
                 placeholder="Search"
+                value={searchQuery}
+                onChange={handleInputChange}
                 className="bg-white w-32 md:w-full text-black lg:rounded-lg rounded-md  pl-9 pr-4 py-1 lg:py-3 border border-darkgrey focus:outline-none focus:ring focus:border-amidnight"
               />
-              <div className="flex gap-x-2 lg:px-6 px-3 lg:py-3 py-1 lg:rounded-lg mb-1 rounded-md text-awhite bg-amidnight items-center">
-                <span className="text-blue-500 text-[1.1rem] lg:text-[1.3rem]">Edit</span>
+              <div className="flex gap-x-2 lg:px-6 px-3 lg:py-3 py-1 lg:rounded-lg mb-1 rounded-md text-awhite bg-amidnight items-center" onClick={toggleEditMode}>
+                <span className="text-blue-500 text-[1.1rem] lg:text-[1.3rem]">{editMode ? 'Save' : 'Edit'}</span>
                 <span className="icon-[uil--edit] lg:w-7 lg:h-7 h-5 w-5"></span>
               </div>
             </div>
@@ -137,7 +161,7 @@ const OrdersList = () => {
           <div className="py-4">
             {/* Body content */}
             <div className="overflow-x-auto border border-[#adadad] rounded-md" style={{ scrollbarWidth: 'none' }}>
-              <table className="table-fixed lg:w-[65rem] ">
+              <table className="table-fixed w-[65rem] xl:w-full ">
                 <thead>
                   <tr className="bg-[#ecf0f5] tlg:text-[1.3rem] text-[1.1rem] border-b border-[#adadad]">
                     <th className="px-4 py-3 flex items-center gap-x-1">
@@ -151,28 +175,58 @@ const OrdersList = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((row, index) => (
-                    <tr
-                      key={row.id}
-                      className={`lg:text-[1.1rem] text-[1rem] ${
-                        index !== data.length - 1 ? 'border-b border-[#adadad]' : ''
-                      } ${row.initialColor}`}
-                    >
-                      <td className="px-4 lg:py-6 py-12 text-center flex items-center gap-x-1">
-                        <span className="icon-[fluent--checkmark-square-20-regular] w-12 h-12 text-amidnight"></span>
-                        {row.id}
-                      </td>
-                      <td className="px-4 py-2 text-center">{row.Customer}</td>
-                      <td className="px-4 py-2 text-center">{row.OrderDate}</td>
-                      <td className="px-4 py-2 text-center">{row.DeliveryDate}</td>
-                      <td className="px-4 py-2 text-center">{row.Amount}</td>
-                      <td className="px-4 py-2 text-center ">
-                      <div className={`text-[1.1rem] w-[10rem] mx-auto h-[3rem] flex rounded-md items-center justify-center ${row.Color} ${row.bgColor} `}>
+                {filterData().map((row, rowIndex) => (
+  <tr
+    key={row.id}
+    className={`lg:text-[1.1rem] text-[1rem] ${
+      rowIndex !== filterData().length - 1 ? 'border-b border-[#adadad]' : ''
+    } ${row.initialColor}`}
+  >
+    <td className="px-4 py-2 flex items-center ">
+      <span className="icon-[fluent--checkmark-square-20-regular] w-12 h-12 text-amidnight"></span>
+      {/* Assuming row.id is the value you want to edit */}
+      <CustomInputComponentid
+        value={row.id}
+        onChange={(newValue) => handleIdChangeid(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+    </td>
+    <td className="px-4 py-auto">
+      <CustomInputComponent
+        value={row.Customer}
+        onChange={(newValue) => handleCustomerChange(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+    </td>
+    <td className="px-4 py-2 text-center">
+      <CustomInputComponent
+        value={row.OrderDate}
+        onChange={(newValue) => handleOrderDateChange(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+    </td>
+    <td className="px-4 py-2 text-center">
+      <CustomInputComponent
+        value={row.DeliveryDate}
+        onChange={(newValue) => handleDeliveryDateChange(newValue, rowIndex)}
+        isReadOnly={!editMode}
+      />
+    </td>
+    <td className="px-4 py-2 text-center">
+      <CustomInputComponent
+        value={row.Amount}
+        onChange={(newValue) => handleAmountChange(newValue, rowIndex)} 
+        isReadOnly={!editMode}
+      />
+    </td>
+    {/* Move the div inside the table cell */}
+    
+    <div className={`text-[1.1rem] w-[10rem] mx-auto h-[3rem] mb-4 flex rounded-md  items-center justify-center ${row.Color} ${row.bgColor} `}>
                            {row.text}
                         </div>
-                      </td>
-                    </tr>
-                  ))}
+  </tr>
+))}
+
                 </tbody>
               </table>
             </div>
